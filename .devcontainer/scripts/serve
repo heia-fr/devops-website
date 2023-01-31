@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+export LECTURE_SHOW=${LECTURE_SHOW:-999}
+export EXAM_SHOW_OBJECTIVES=${EXAM_SHOW_OBJECTIVES:-999}
+export EXERCISE_SHOW_DATA=${EXERCISE_SHOW_DATA:-999}
+export EXERCISE_SHOW_SOLUTION=${EXERCISE_SHOW_SOLUTION:-999}
+export ASSIGNMENT_SHOW_DATA=${ASSIGNMENT_SHOW_DATA:-999}
+export ASSIGNMENT_SHOW_SOLUTION=${ASSIGNMENT_SHOW_SOLUTION:-999}
+
+# Serve MkDocs
+mkdocs serve -f config/mkdocs.yml

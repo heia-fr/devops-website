@@ -1,0 +1,26 @@
+/* https://material.io/resources/color */
+:root {
+    --md-primary-fg-color:        #df0019;
+    --md-primary-fg-color--light: #ff5343;
+    --md-primary-fg-color--dark:  #a40000;
+    --md-accent-fg-color: #007CB7;
+}
+
+.md-content a {
+    text-decoration: underline;
+}
+
+img.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+}
+
+.row-of-two {
+    display: flex;
+}
+  
+.column {
+    flex: 50%;
+}

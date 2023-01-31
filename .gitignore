@@ -1,0 +1,8 @@
+site/
+public/
+settings.json
+/.archive
+*.pyc
+__mkdocs_*.yml
+.DS_Store
+.pages

@@ -1,0 +1,95 @@
+docs_dir: '../docs/'
+site_dir: '../public/'
+
+copyright: "Copyright &copy; {{ today.year }} Haute école d'ingénierie et d'architecture of Fribourg"
+
+theme:
+  name: material
+  language: 'fr'
+  palette:
+    # Palette toggle for light mode
+    - scheme: isc
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode  
+  font:
+    text: 'Roboto'
+    code: 'IBM Plex Mono'
+  custom_dir: '../overrides/'
+  icon:
+    logo: material/school 
+  favicon: 'assets/images/favicon.ico'
+  features:
+    - content.code.annotate
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.tracking
+    - content.tabs.link
+
+markdown_extensions:
+  admonition: {}
+  extra: {}
+  smarty:
+      smart_angled_quotes: true
+      substitutions:
+        left-angle-quote: "&laquo;&#xA0;"
+        right-angle-quote: "&#xA0;&raquo;"
+  mkdcomments: {}
+  footnotes: {}
+  codehilite: {}
+  pymdownx.arithmatex:
+    generic: true
+  pymdownx.betterem:
+    smart_enable: all
+  pymdownx.highlight: {}
+  pymdownx.caret: {}
+  pymdownx.critic: {}
+  pymdownx.details: {}
+  pymdownx.keys: {}
+  pymdownx.emoji:
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
+  pymdownx.inlinehilite: {}
+  pymdownx.magiclink: {}
+  pymdownx.mark: {}
+  pymdownx.smartsymbols: {}
+  pymdownx.superfences: {}
+  pymdownx.tabbed:
+      alternate_style: true 
+  pymdownx.tasklist:
+    custom_checkbox: true
+  pymdownx.tilde: {}
+  mdx_math: {}
+  attr_list: {}
+  md_in_html: {}
+
+hooks:
+  - hooks.py
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  search: {}
+  include-markdown:
+      opening_tag: '{!'
+      closing_tag: '!}'
+  awesome-pages: {}
+  macros: {}
+  git-revision-date-localized:
+      enable_creation_date: false
+      fallback_to_build_date: true
+      locale: fr
+      timezone: Europe/Zurich
+      enabled: true
