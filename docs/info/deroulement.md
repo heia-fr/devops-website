@@ -23,7 +23,7 @@ au sein de chaque groupe.
     
     - Synthèse de pré-analyse de l'app
     - Annonces des groupes formés (canal Teams)
-    - Fork du projet et accès aux prof en maintainer.\\
+    - Fork du projet et accès aux profs en maintainer.
 
 ## P2 : Lundi 27.02 à 13h 
 
@@ -90,7 +90,7 @@ au sein de chaque groupe.
 
 ## P9 : Lundi 24.04 à 13h
 
-- Follow-up Mnitoring et Orchestration  (S. Rumley)
+- Follow-up Monitoring et Orchestration  (S. Rumley)
 
 !!! note "Livrables"
     
