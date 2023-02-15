@@ -66,7 +66,7 @@ au sein de chaque groupe.
 
 !!! note "Livrables"
 
-    - Propositions MLOps\\
+    - Propositions MLOps
 
 ## P7 : Lundi 03.04 à 13h
 
@@ -97,7 +97,7 @@ au sein de chaque groupe.
 
 ## P10 : Lundi 01.05 à 13h 
 
-- Follow-Up  MLOps  (B. Wolf) & 
+- Follow-Up  MLOps  (B. Wolf)
 
 !!! note "Livrables"
     
