@@ -66,6 +66,7 @@ au sein de chaque groupe.
 
 !!! note "Livrables"
 
+    - Proposition aspect "Machine learning"
     - Propositions MLOps
 
 ## P7 : Lundi 03.04 à 13h
