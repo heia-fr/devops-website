@@ -8,10 +8,9 @@ Dans le projet, les outils GitLab et MS Teams sont utilisés pour tout sort d'é
 les documentations (logbooks, rapport, etc.) et le code.
 
 ## GitLab
+Chaque groupe est censé crée un groupe git pour son projet, dans lequel il fork du [projet](https://gitlab.forge.hefr.ch/samuel.fringeli/spoton-student) principal auquel nous vous avond donné accès. Le groupe devrait également avoir un autre projet git dédié à la documentation (i.e. journal de bord, PV, documentation).
 
-Un groupe[^1], a été défini sur Gitlab. Des projets (fork du projet principal) vont être créés par chaque
-groupe.
-[^1]: https://gitlab.forge.hefr.ch/ps4-2021-2022
+
 
 La branche `main` du répertoire de groupe fera foi et sera consultée et évaluée par les professeurs. Il est
 important de faire en sorte qu'elle reflète l'état actuel de la réalisation du groupe, en y faisant des commit
