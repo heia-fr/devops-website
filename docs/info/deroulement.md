@@ -45,10 +45,13 @@ au sein de chaque groupe.
 ## P4 : Lundi 13.03 à 13h
 
 - DevSecOps  (M. Mäder)
+- DevSecOps / SSDLC, c'est quoi ?
 
 !!! note "Livrables"
 
-    - Propositions CI/CD
+    - Small Threat Modell of the SooZ App
+    - Pipeline qui execute un DAST
+
 
 ## P5 : Lundi 20.03 à 13h
 
