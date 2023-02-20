@@ -25,7 +25,7 @@ au sein de chaque groupe.
     - Annonces des groupes formés (canal Teams)
     - Fork du projet et accès aux profs en maintainer.
 
-## P2 : Lundi 27.02 à 13h 
+## P2 : Lundi 27.02 à 10h15
 
 - CI/CD  (J. Supcik)
 
@@ -33,7 +33,7 @@ au sein de chaque groupe.
 
     - Propositions CI/CD
 
-## P3 : Lundi 6.03 à 13h
+## P3 : Lundi 6.03 à 10h15
 
 - Automatisation des tests (S. Ingram)
 - Git tips
@@ -42,18 +42,18 @@ au sein de chaque groupe.
     
     - Propositions Tests
 
-## P4 : Lundi 13.03 à 13h
+## P4 : Lundi 13.03 à 10h15
 
 - DevSecOps  (M. Mäder)
 - DevSecOps / SSDLC, c'est quoi ?
 
 !!! note "Livrables"
 
-    - Small Threat Modell of the SooZ App
+    - Small Threat Model of the SooZ App
     - Pipeline qui execute un DAST
 
 
-## P5 : Lundi 20.03 à 13h
+## P5 : Lundi 20.03 à 10h15
 
 - Code Robuste (S. Rumley)
 - Outils de monitoring et orchestration  
@@ -63,7 +63,7 @@ au sein de chaque groupe.
     - Propositions Monitoring
 
 
-## P6 : Lundi 27.03 à 13h
+## P6 : Jeudi 30.03 à 10h15
 
 - MLOps  (B. Wolf)
 
@@ -72,7 +72,7 @@ au sein de chaque groupe.
     - Proposition aspect "Machine learning"
     - Propositions MLOps
 
-## P7 : Lundi 03.04 à 13h
+## P7 : Lundi 03.04 à 10h15
 
 - Follow-Up CI/CD (J.Supcik) 
 - Follow-Up Tests (S. Ingram) 
@@ -82,7 +82,7 @@ au sein de chaque groupe.
     
     - github actions
 
-## P8 : Lundi 17.04 à 13h
+## P8 : Lundi 17.04 à 10h15
 
 - Follow-up DevSecOps (M. Mäder)
 
@@ -91,7 +91,7 @@ au sein de chaque groupe.
     - TBD
 
 
-## P9 : Lundi 24.04 à 13h
+## P9 : Lundi 24.04 à 10h15
 
 - Follow-up Monitoring et Orchestration  (S. Rumley)
 
@@ -99,7 +99,7 @@ au sein de chaque groupe.
     
     - TBD
 
-## P10 : Lundi 01.05 à 13h 
+## P10 : Jeudi 04.05 à 10h15 
 
 - Follow-Up  MLOps  (B. Wolf)
 
