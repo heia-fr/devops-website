@@ -26,11 +26,19 @@ pour vous en faire une idée. Et si ça vous semble peu, regardez les
 dernières lignes qui importent le contenu du répertoire.
 [`.gitlab/ci`](https://gitlab.com/gitlab-org/gitlab/-/tree/master/.gitlab/ci)
 
+Etudiez aussi l'utilisation du mot clé
+[`extend`](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#use-extends-to-reuse-configuration-sections)
+pour simplifier des configurations complexes.
+
 Pour maîtriser le CI/CD de GitLab, il est important que cous compreniez
 le concept
 d'[artifact](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
 et que vous sachiez utiliser les
 [caches](https://docs.gitlab.com/ee/ci/caching/) efficacement.
+Lisez le chapitre sur les [releases](https://docs.gitlab.com/ee/user/project/releases/)
+de GitLab (principalement la [partie qui explique comment produire une _release_
+depuis le CI/CD](https://docs.gitlab.com/ee/user/project/releases/#creating-a-release-by-using-a-cicd-job)) pour apprendre comment publier
+un _artifact_ sur GitLab.
 
 ## Liens
 
