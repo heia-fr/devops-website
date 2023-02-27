@@ -160,7 +160,6 @@ tous les fichiers que vous venez de créer.
 Après avoir synchronisé votre dépôt (avec `git push`), vous devriez voir une nouvelle
 entrée dans la section "CI/CD" --> "Pipelines" :
 
-
 <figure markdown>
 ![](img/cicd0.jpg)
 </figure>
@@ -176,6 +175,14 @@ Vous pouvez télécharger et exécuter cette image avec la commande :
 ``` bash
 docker run --rm registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>
 ```
+
+!!! info "Info"
+    Si votre projet est privé, vous devrez probablement vous authentifier avant
+    de pouvoir utiliser l'image :
+
+    ```bash
+    docker login registry.forge.hefr.ch
+    ```
 
 et vous devriez obtenir ceci :
 
