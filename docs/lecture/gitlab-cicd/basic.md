@@ -61,16 +61,26 @@ image Docker. C'est ce que nous allons faire maintenant.
 Créez un fichier "Dockerfile" dans le même dossier :
 
 ``` Dockerfile title="Dockerfile"
-FROM golang:1.20 AS builder
+FROM public.ecr.aws/docker/library/golang:1.20 AS builder
 WORKDIR /app
 COPY go.mod hello-devops.go ./
 RUN go build .
 
-FROM alpine:latest
+FROM public.ecr.aws/docker/library/alpine:latest
 WORKDIR /root/
 COPY --from=builder /app/hello-devops /usr/local/bin/hello-devops
 CMD ["/usr/local/bin/hello-devops"]
 ```
+
+!!! warning "Attention"
+    Dans le `Dockerfile` ci-dessus, nous téléchargeons les images du "Elastic Container Registry" de Amazon (public.ecr.aws)
+    et non du "standard" Docker (DockerHub). Ce choix permet de s'affranchir de la [limite de
+    100 téléchargements](https://docs.docker.com/docker-hub/download-rate-limit/#whats-the-download-rate-limit-on-docker-hub)
+    que nous impose Docker.
+
+    **Si vous téléchargez les images directement depuis DockerHub, vous risquez de bloquer les tâches de
+    toute l'école pendant 6 heures !**
+
 
 construisez une image Docker :
 
@@ -105,10 +115,10 @@ et laisser les ordinateurs du _cloud_ faire le travail.
 Ajoutez le fichier ".gitlab-ci.yml" à votre dossier :
 
 ``` yaml title=".gitlab-ci.yml"
-image: docker:19.03.15
+image: public.ecr.aws/docker/library/docker:19.03.15
 
 services:
-  - docker:19.03.15-dind
+  - public.ecr.aws/docker/library/docker:19.03.15-dind
 
 variables:
   IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG

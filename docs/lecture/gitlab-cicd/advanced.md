@@ -40,6 +40,18 @@ de GitLab (principalement la [partie qui explique comment produire une _release_
 depuis le CI/CD](https://docs.gitlab.com/ee/user/project/releases/#creating-a-release-by-using-a-cicd-job)) pour apprendre comment publier
 un _artifact_ sur GitLab.
 
+## Déploiement sans interruption de service
+
+Pour les services en ligne, il n'est souvent pas acceptable d'interrompre le service pendant le déploiement
+d'une nouvelle version. C'est d'autant plus important si on décide de faire des déploiements très fréquents.
+
+Voici quelques liens qui vous donnent des pistes pour permettez un déploiement sans interruption de service :
+
+- https://octopus.com/blog/blue-green-red-black
+- https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment
+- https://circleci.com/blog/canary-vs-blue-green-downtime/
+
+
 ## Liens
 
 Étudiez le contenu de ces liens pour apprendre comment utiliser
@@ -80,7 +92,7 @@ docker run -d --name gitlab-runner --restart always \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v gitlab-runner-config:/etc/gitlab-runner \
     gitlab/gitlab-runner:latest
-````
+```
 
 Dans votre groupe allez dans "CI/CD" --> "Runners" et 
 cliquez sur "Register a group runner". Vous obtiendrez

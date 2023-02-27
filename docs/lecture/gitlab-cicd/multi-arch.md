@@ -20,10 +20,10 @@ Nous allons donc modifier notre projet pour que le _runner_ produise
 Modifiez le fichier ".gitlab-ci.yml" avec ce contenu:
 
 ``` yaml title=".gitlab-ci.yml"
-image: docker:19.03.15
+image: public.ecr.aws/docker/library/docker:19.03.15
 
 services:
-  - docker:19.03.15-dind
+  - public.ecr.aws/docker/library/docker:19.03.15-dind
 
 variables:
   IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
@@ -93,10 +93,10 @@ déployez ce projet sur Gitlab.
 Ajoutez le fichier ".gitlab-ci.yml" suivant:
 
 ``` yaml title=".gitlab-ci.yml"
-image: docker:19.03.15
+image: public.ecr.aws/docker/library/docker:19.03.15
 
 services:
-  - docker:19.03.15-dind
+  - public.ecr.aws/docker/library/docker:19.03.15-dind
 
 variables:
   IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
@@ -138,7 +138,7 @@ pas la seule option et vous pouvez publier votre image dans d'autres registries 
 - AWS Container Registry
 - Google Container Registry
 
-Docker Hub est le plus populaire et nous allons y publier notre image. Si ce n'est pas déàà
+Docker Hub est le plus populaire et nous allons y publier notre image. Si ce n'est pas déjà
 fait, créez un compte sur https://hub.docker.com/ et connectez-vous.
 
 Cliquez sur votre _login name_ en haut à droite, puis sur _Account Settings_
@@ -167,10 +167,10 @@ votre _user name_ sur Docker Hub. Protégez le "DOCKERHUB_TOKEN" en cochant la c
 Remplacez le contenu du fichier ".gitlab-ci.yml" par ceci :
 
 ```yaml title=".gitlab-ci.yml"
-image: docker:19.03.15
+image: public.ecr.aws/docker/library/docker:19.03.15
 
 services:
-  - docker:19.03.15-dind
+  - public.ecr.aws/docker/library/docker:19.03.15-dind
 
 variables:
   DOCKERHUB_PROJECT: devops
