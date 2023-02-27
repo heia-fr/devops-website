@@ -121,7 +121,7 @@ build:
   stage: build
   script:
     - docker build -t $IMAGE_TAG_LATEST .
-    - docker tag $IMAGE_TAG_SLUG $IMAGE_TAG_LATEST
+    - docker tag $IMAGE_TAG_LATEST $IMAGE_TAG_SLUG
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker push $IMAGE_TAG_SLUG
     - docker push $IMAGE_TAG_LATEST
