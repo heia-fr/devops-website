@@ -40,6 +40,7 @@ build:
     - mkdir -p /usr/local/lib/docker/cli-plugins
     - wget https://github.com/docker/buildx/releases/download/v0.10.3/buildx-v0.10.3.linux-amd64 -O /usr/local/lib/docker/cli-plugins/docker-buildx
     - chmod a+x /usr/local/lib/docker/cli-plugins/docker-buildx
+    - docker buildx create --use
     - docker buildx ls
     - docker buildx build --push --platform linux/amd64 --tag "${IMAGE_TAG_SLUG}-amd64" .
     - docker buildx build --push --platform linux/arm64 --tag "${IMAGE_TAG_SLUG}-arm64" .
@@ -111,8 +112,8 @@ build:
     - mkdir -p /usr/local/lib/docker/cli-plugins
     - wget https://github.com/docker/buildx/releases/download/v0.10.3/buildx-v0.10.3.linux-amd64 -O /usr/local/lib/docker/cli-plugins/docker-buildx
     - chmod a+x /usr/local/lib/docker/cli-plugins/docker-buildx
-    - docker buildx ls
     - docker buildx create --use
+    - docker buildx ls
     - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $IMAGE_TAG_SLUG -t$IMAGE_TAG_LATEST  --push .
 ```
 
@@ -186,8 +187,8 @@ build:
     - mkdir -p /usr/local/lib/docker/cli-plugins
     - wget https://github.com/docker/buildx/releases/download/v0.10.3/buildx-v0.10.3.linux-amd64 -O /usr/local/lib/docker/cli-plugins/docker-buildx
     - chmod a+x /usr/local/lib/docker/cli-plugins/docker-buildx
-    - docker buildx ls
     - docker buildx create --use
+    - docker buildx ls
     - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $IMAGE_TAG_LATEST -t $IMAGE_TAG_SLUG --push .
 ```
 
