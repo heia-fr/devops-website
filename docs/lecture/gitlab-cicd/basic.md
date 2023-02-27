@@ -129,7 +129,7 @@ build:
 
 !!! note "Note"
     le service `docker:19.03.15-dind` (dind = Docker-in-Docker) permet de faire
-    tourner du DOcker dans du Docker. La version utilisée (19.03.15) n'est pas
+    tourner du Docker dans du Docker. La version utilisée (19.03.15) n'est pas
     la plus récente, mais avec l'installation de l'école, c'est la dernière
     version qui fonctionne correctement. N'hésitez pas à me dire si vous
     réussissez à utiliser une image plus récente
