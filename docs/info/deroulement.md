@@ -42,7 +42,7 @@ au sein de chaque groupe.
     
     - Propositions Tests
 
-## P4 : Lundi 13.03 à 10h15
+## P4 : Lundi 13.03 à 08h15
 
 - DevSecOps  (M. Mäder)
 - DevSecOps / SSDLC, c'est quoi ?
