@@ -450,14 +450,14 @@ mkdocs = ">=1.0"
 
 [[package]]
 name = "mkdocs-include-markdown-plugin"
-version = "4.0.3"
+version = "4.0.4"
 description = "Mkdocs Markdown includer plugin."
 category = "main"
 optional = false
 python-versions = "<3.12,>=3.7"
 files = [
-    {file = "mkdocs_include_markdown_plugin-4.0.3-py3-none-any.whl", hash = "sha256:bea863f0f4773c2dba4524e629bed222b0ce4135bcd47fc2fc6f524384f21bd8"},
-    {file = "mkdocs_include_markdown_plugin-4.0.3.tar.gz", hash = "sha256:0b98f8877a6e262a91024dae0d40597b04ebe9175f5dfdfa5796a9068e24458a"},
+    {file = "mkdocs_include_markdown_plugin-4.0.4-py3-none-any.whl", hash = "sha256:792caa91c2c46fa174ad44caa786656ac3f475f2cef5ad33ad28a106f7bc4086"},
+    {file = "mkdocs_include_markdown_plugin-4.0.4.tar.gz", hash = "sha256:a5d569a653a610cbbe5b9c0ebb257ce7f94b453e93c3ae2c503b682e77465773"},
 ]
 
 [[package]]
@@ -984,4 +984,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "50e7d6ffda045d065935c4d84f5ee13304397258be33aa9adabd683df47b6591"
+content-hash = "d46b110ec552d79aa68647b1849b8dda8fe22a36414fa2c33e784b7c6e276689"
