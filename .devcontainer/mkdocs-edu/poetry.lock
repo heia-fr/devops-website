@@ -484,14 +484,14 @@ test = ["mkdocs-include-markdown-plugin", "mkdocs-macros-test", "mkdocs-material
 
 [[package]]
 name = "mkdocs-material"
-version = "9.0.9"
+version = "9.1.2"
 description = "Documentation that simply works"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mkdocs_material-9.0.9-py3-none-any.whl", hash = "sha256:29ebb2aa81e8cfb39e497bdafcacf4cc4aaa20ae31ce334f520c317c5bead1ba"},
-    {file = "mkdocs_material-9.0.9.tar.gz", hash = "sha256:c8fa9b1f0fded744a42317e594e5c21f4e3b56f1a0497e7d16951b3bd47784bf"},
+    {file = "mkdocs_material-9.1.2-py3-none-any.whl", hash = "sha256:344a1c66f0e217e5ceaf67739d274e51c61ac9f9d7af55a5b4805a4a2ab54184"},
+    {file = "mkdocs_material-9.1.2.tar.gz", hash = "sha256:9ca8c980c30aab3b70e3bfbec691f9ffcbea8319873911c86e8af145147e2a9d"},
 ]
 
 [package.dependencies]
@@ -984,4 +984,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "50e7d6ffda045d065935c4d84f5ee13304397258be33aa9adabd683df47b6591"
+content-hash = "d1fd10afed28f885bca1c5d1618bf3566cf5384208b3469506e2f1c7e8b04bd0"
