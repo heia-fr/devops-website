@@ -68,7 +68,7 @@ The connection is done through the `needs` keyword between the running service (
 ## Question 3 - Threat model
 Describe the sooze infrastructure with the help of a threat model. Follow the STRIDE methodology and find the trust bounderies and some of potential threats.
 
-** → This should be done for the end of your project**
+**→ This should be done for the end of your project**
 
 ## Question 4 - Commit signing
 Turn your commit signing on.
@@ -76,4 +76,4 @@ Turn your commit signing on.
 ## Question 5 - DAST for Sooze repo
 Integrate in your final pipeline a DAST check for the Sooze application.
 
-Provide some specific API routes, that should be tested with the selected DAST solution.
+Provide some specific API routes, that should be tested with the selected DAST solution. Describe what kind of API you choose for testing, why?
