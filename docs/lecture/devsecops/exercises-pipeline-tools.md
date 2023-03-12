@@ -4,60 +4,76 @@ title: Exercises and security pipeline tools
 
 # {{ title }}
 
-This chapter briefly describes the individual building blocks of the DevSecOps principle, each with some examples of tools/standards/methods, etc.
+The main goal of these exercises is to include security tools and mechanisms into your CI/CD pipeline. For this purpose you should work on two different projects (repos). The main work will be done of the repo where the Sooze application is. A sandbox, for testing and playing is available here: https://gitlab.forge.hefr.ch/devsecops/calculatorapi (Calculator REST API)
 
-![](img/SC-SSDLC.png){ width="90%" }
+## Question 1 - Fork the sandbox repository - the calculator REST API
+Get a copy, fork it!, of this repo (https://gitlab.forge.hefr.ch/devsecops/calculatorapi), which contains a working, but very shaky pipeline. The repo and its purpose is described directly in the repo's README.md file.
 
-### Food for thought
-> Today, we live our lives online. The internet has no geography. It has no borders. By creating the internet, mankind opened up a Pandora’s Box where tangible borders and recognizable enemies ceased to exist.
->
-> Mikko Hypponen, Chief Research Officer, F-Secure
+Fork this repo in your group and use it to play around
 
-## Shift left
-What does shift left means?
+## Question 2 - Analyze the existing pipeline and improve it
+The existing pipeline launches some unit tests and executes also a coverage analysis of the tests. The result of the coverage test can be found in the pages section of the repository.
 
-Security practices and testing are performed **earlier** in the development lifecycle, hence the term shift left can be used.
+### SAST
+How could you easily add a SAST check in the testing stage of the existing pipeline? As it is a Python environment, you should opt for `semgrep`. For Sooze application, other SAST solution (it will be covered also in the S. Rumley's lecture), like SonarQube, should be used then. 
 
-![](img/shift-left.png){ width="90%" }
+Get some inspiration here: https://docs.gitlab.com/ee/user/application_security/sast/#configure-sast-in-your-cicd-yaml 
 
-## DevSecOps building blocks
-The different stages in the traditional SDLC must be extended with the security building blocks that are depicted in the following sub chapters.
+### DAST
+Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: https://docs.gitlab.com/ee/user/application_security/dast/
 
-### Training and Awareness (T&A)
-Because security is distributed throughout the **entire development process**, a good understanding of security is required throughout the **entire development team**. T&A is a topic that must be addressed by everyone (engineers, architects, business representatives, ...) across the team and the organization.
+DAST tests your application will it is running. So, you must ensure that a version of your test application (calculator) runs during your DAST tests. For this, you must use DinD (Docker-in-Docker). On the gitlab inspiration site you find a lot of information about that. Here a snippet, how your pipeline could look like for launching the calculator application:
 
-Continous training, awareness actions, communication channels and much more are just some of the actions that have to be done in this all over building block.
+```bash
+### build the docker image with the running application (calculator) ####
+variables:
+  IMAGE_TAG_SHA: "$CI_REGISTRY_IMAGE/calculator/image:$CI_COMMIT_SHORT_SHA"
+  IMAGE_TAG: "$CI_REGISTRY_IMAGE/calculator/image:latest"
+  
+build_flask_service:
+  image: docker:19.03.13    # this version is known to work smoothly with the HEIA-FR's gitlab system
+  stage: build
+  services:
+    - docker:19.03.13-dind
+  script:
+    - cd src/
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker pull $IMAGE_TAG || true
+    - docker build --network host --cache-from $IMAGE_TAG -t $IMAGE_TAG_SHA -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG_SHA
+    - docker push $IMAGE_TAG
+  before_script:
+    - docker info
+    - echo $IMAGE_TAG_SHA
+    - echo $IMAGE_TAG
+```
 
-### Organizational scaling
-Scaling in a company is very difficult, thus **all** parties in DevOps must increase the security. 
+Once the application is running, it can be tested with OWASP ZAP (DAST) for vulnerabilities. In the pipeline you must indicate that you want to connect to the previously created and launched application, which will be the system-under-test.
 
-!!! information "Old non-DevOps structures have a ration like this"
-    100 developers → 10 operators → 1 security specialist
+```bash
+#### DAST stuff ####
+dast:
+  variables:
+    DAST_FULL_SCAN_ENABLED: "true"
+    DAST_BROWSER_SCAN: "true"
+    DAST_WEBSITE: "http://calculator-app:5000/"
+  services:
+    - name: $CI_REGISTRY_IMAGE/calculator/image:$CI_COMMIT_SHORT_SHA
+      alias: calculator-app
+  needs: ["build_flask_service"]    # build_flask_service is the dind service
+```
 
-**Shift-left** transfers the responsibility for security directly to the DevOps teams, thus DevSecOps.
+The connection is done through the `needs` keyword between the running service (calculator) and the DAST test. The running service is described under the `services` section, it will be connected with the aliased name (calculator-app), which is then referenced for the `DAST_WEBSITE` argument.
 
-!!! danger "Skills set needed"
-    The right skills must be present in the DevOps team!
-    
-    The benefit of this is that overall **security awareness** in the team increases due to the diversity in the skills
+## Question 3 - Threat model
+Describe the sooze infrastructure with the help of a threat model. Follow the STRIDE methodology and find the trust bounderies and some of potential threats.
 
-Security roles in a large-scale company are: *Security Officer*, *Security Coach* and *Security Champion/Ambassador*. And all they build up the **Security community** for the DevSecOps approach!
+** → This should be done for the end of your project**
 
-### Security in planning activities (Requirements  -  Architecture & Design)
-Everything as code is a central principle of DevOps and of course also of DevSecOps. Therefore the creation of code must be **well prepared** and **carefully considered**.
+## Question 4 - Commit signing
+Turn your commit signing on.
 
-Security activities must take place (in the SSDLC) already in phases like **requirements gathering**, **architecture** and **design**.
+## Question 5 - DAST for Sooze repo
+Integrate in your final pipeline a DAST check for the Sooze application.
 
-!!! information "Security requirements"
-    (Security) requirements will come, beside from the functional requirements, from sources like:
-    
-    - Legal provisions (e.g. GDPR)
-    - Compliance (e.g. ISO27001, Finma circular)
-    - Handling of data and information according to internal data classification and specifications
-    - Customer requirements
-
-Existing sources of security requirements are easy to find out in the Internet. 
-### Technical security activities (Implementation - Verification)
-
-### Deployment pipeline security (Maintenance & Operation)
-### Productive operations and attack response (Maintenance & Operation)
+Provide some specific API routes, that should be tested with the selected DAST solution.
