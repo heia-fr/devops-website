@@ -20,6 +20,8 @@ Security practices and testing are performed **earlier** in the development life
 
 ![](img/shift-left.png){ width="90%" }
 
+![](img/costst.png){ width="90%" }
+
 ## DevSecOps building blocks
 The different stages in the traditional SDLC must be extended with the security building blocks that are depicted in the following sub chapters:
 

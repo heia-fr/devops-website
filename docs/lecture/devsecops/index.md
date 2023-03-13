@@ -29,7 +29,7 @@ To resume the most important points in DevSecOps, we have:
 - Organization - Security is anchored in the DevSecOps organization. Responsibility for risks and vulnerabilities
 - Automation, automation and, automation
 
-**Efficient security in a DevSecOps organization is primarily characterized by the strong integration fo the various security activities**. The better the individuals steps are linked, the more effectively security can be implemented. 
+**Efficient security in a DevSecOps organization is primarily characterized by the strong integration of the various security activities**. The better the individuals steps are linked, the more effectively security can be implemented. 
 
 Thus the DevSecOps approach helps to achieve this goal.
 
