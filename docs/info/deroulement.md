@@ -82,7 +82,7 @@ au sein de chaque groupe.
     
     - github actions
 
-## P8 : Lundi 17.04 à 10h15
+## P8 : Lundi 17.04 à 08h15
 
 - Follow-up DevSecOps (M. Mäder)
 
