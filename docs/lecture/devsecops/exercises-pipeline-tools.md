@@ -20,7 +20,7 @@ How could you easily add a SAST check in the testing stage of the existing pipel
 Get some inspiration here: https://docs.gitlab.com/ee/user/application_security/sast/#configure-sast-in-your-cicd-yaml 
 
 ### DAST
-Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: https://docs.gitlab.com/ee/user/application_security/dast/
+Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: https://docs.gitlab.com/ee/user/application_security/dast/. To use the template provided by GitLab, you must include the `DAST.gitlab-ci.yml` template (See https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Security/DAST.gitlab-ci.yml)
 
 DAST tests your application will it is running. So, you must ensure that a version of your test application (calculator) runs during your DAST tests. For this, you must use DinD (Docker-in-Docker). On the gitlab inspiration site you find a lot of information about that. Here a snippet, how your pipeline could look like for launching the calculator application:
 
@@ -51,6 +51,18 @@ build_flask_service:
 Once the application is running, it can be tested with OWASP ZAP (DAST) for vulnerabilities. In the pipeline you must indicate that you want to connect to the previously created and launched application, which will be the system-under-test.
 
 ```bash
+stages:
+  - ...
+  - ...
+  - dast
+
+include:
+  - template: DAST.latest.gitlab-ci.yml
+
+...
+...
+...
+
 #### DAST stuff ####
 dast:
   variables:

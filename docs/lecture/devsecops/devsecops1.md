@@ -20,7 +20,20 @@ Security practices and testing are performed **earlier** in the development life
 
 ![](img/shift-left.png){ width="90%" }
 
-![](img/costst.png){ width="90%" }
+With the shift left approach, the development cycle will be improved:
+
+- Better test coverage
+- Costs will drop
+- Time savings are possible
+- Bugs are removed early in the process
+- Team must work closely together
+
+![](img/shift-left2.webp){ width="70%" }
+
+### Find your vulnerabilities as soon as possible!
+The earlier vulnerabilities are found, the easier and less costly they can be remedied. The differences between early and late detection can reach factors of up to 100x. See the following graph (IBM):
+
+![](img/costst.png){ width="80%" }
 
 ## DevSecOps building blocks
 The different stages in the traditional SDLC must be extended with the security building blocks that are depicted in the following sub chapters:
