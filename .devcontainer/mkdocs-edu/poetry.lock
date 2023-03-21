@@ -537,17 +537,17 @@ mkdocs = ">=1.4.1"
 
 [[package]]
 name = "mkdocs-static-i18n"
-version = "0.53"
+version = "0.54"
 description = "MkDocs i18n plugin using static translation markdown files"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mkdocs-static-i18n-0.53.tar.gz", hash = "sha256:eccd819e727bc91bb58cc7c34230266f9e475abfbc11ace1e4c1f262969e2c2e"},
+    {file = "mkdocs-static-i18n-0.54.tar.gz", hash = "sha256:dc95ef20afcd7987488cdd55ae87375af1eb7e07c5df6bc271152c3809d6b216"},
 ]
 
 [package.dependencies]
-mkdocs = ">=1.2.3"
+mkdocs = ">=1.4.2"
 
 [[package]]
 name = "natsort"
@@ -984,4 +984,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "50e7d6ffda045d065935c4d84f5ee13304397258be33aa9adabd683df47b6591"
+content-hash = "66ed24d23833fa33a867291baad7ee6b544190538b00262b89d48b1c64b122d6"
