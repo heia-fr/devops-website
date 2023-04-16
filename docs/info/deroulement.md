@@ -88,7 +88,7 @@ au sein de chaque groupe.
 
 !!! note "Livrables"
     
-    - TBD
+    - 
 
 
 ## P9 : Lundi 24.04 à 10h15
