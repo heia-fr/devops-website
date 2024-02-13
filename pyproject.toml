@@ -7,23 +7,23 @@ license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
-mkdocs = "^1.5.2"
+mkdocs = "^1.5.3"
 mkdocs-awesome-pages-plugin = "^2.9.2"
 mkdocs-calendar-plugin = "^0.4.0"
-mkdocs-git-revision-date-localized-plugin = "^1.2.0"
+mkdocs-git-revision-date-localized-plugin = "^1.2.4"
 mkdocs-glightbox = "^0.3.4"
-mkdocs-include-markdown-plugin = "^6.0.1"
+mkdocs-include-markdown-plugin = "^6.0.4"
 mkdocs-jconfig-plugin = "^0.1.1"
-mkdocs-macros-plugin = "^1.0.4"
-mkdocs-material = "^9.3.1"
-mkdocs-mermaid2-plugin = "^1.1.0"
+mkdocs-macros-plugin = "^1.0.5"
+mkdocs-material = "^9.5.9"
+mkdocs-mermaid2-plugin = "^1.1.1"
 mkdocs-minify-plugin = "^0.8.0"
 mkdocs-pages-j2-plugin = "^0.3.0"
-mkdocs-static-i18n = "^1.0.3"
+mkdocs-static-i18n = "^1.2.0"
 python-markdown-comments = { git = "https://github.com/ryneeverett/python-markdown-comments.git", rev = "973fe7b" }
 python-markdown-math = "^0.8"
 platformdirs = "^4.2.0"
-mkdocs-open-in-new-tab = "^1.0.2"
+mkdocs-open-in-new-tab = "^1.0.3"
 
 [tool.poetry.dev-dependencies]
 

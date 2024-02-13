@@ -541,20 +541,20 @@ cache = ["platformdirs"]
 
 [[package]]
 name = "mkdocs-jconfig-plugin"
-version = "0.1.2"
+version = "0.1.3"
 description = "An MkDocs plugin to process configuration items with Jinja2"
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "mkdocs_jconfig_plugin-0.1.2-py3-none-any.whl", hash = "sha256:6b4b83e07e43299f25c0ee873f5485e338eb855b136053f9c810d6a77218a236"},
-    {file = "mkdocs_jconfig_plugin-0.1.2.tar.gz", hash = "sha256:1725e3d40d5ef1e4814105a8aa8c8b67783ab1ed6dfd9884cb6f09985fce660d"},
+    {file = "mkdocs_jconfig_plugin-0.1.3-py3-none-any.whl", hash = "sha256:7a4a7c112401bd9692f6eff8a1ed7fa19f904dc41a399c230d403fc9cf763945"},
+    {file = "mkdocs_jconfig_plugin-0.1.3.tar.gz", hash = "sha256:fd4a2f57ed1818dcf34ff662a94dae126a342588ecb53f29edcfde0476001893"},
 ]
 
 [package.dependencies]
-mkdocs = ">=1.5.2,<2.0.0"
+mkdocs = ">=1.5.3,<2.0.0"
 
 [package.extras]
-test = ["mkdocs-macros-plugin (>=1.0.4,<2.0.0)", "mkdocs-material (>=9.3.1,<10.0.0)"]
+test = ["mkdocs-macros-plugin (>=1.0.5,<2.0.0)", "mkdocs-material (>=9.5.9,<10.0.0)"]
 
 [[package]]
 name = "mkdocs-macros-plugin"
@@ -1209,4 +1209,4 @@ bracex = ">=2.1.1"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.12"
-content-hash = "124f840c902f1a13f1cd2a56657dd2be3a20a83d24322a30a2ff3e3c5b0754b8"
+content-hash = "1f977a35d7a4d4ca958c823c822ab53365b653ed5d8e6413cfd8d8094793ecf5"
