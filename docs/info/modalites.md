@@ -24,7 +24,7 @@ vous seront donnés selon le plan suivant:
 | Jeudi 14 Mars à 10h15    | Sécurité in CI/CD pipeline? (M. Mäder)                  |
 | Lundi 18 Mars à 13h      | "Testing Theory" (S. Rumley)                            |
 | Jeudi 21 Mars à 10h15    | Testing: approches, types, et technologies (S. Ingram)  |    
-| Lundi 25 Mars à 13h      | MLOps (. Wolf)                                          |     
+| Jeudi 28 Mars à 13h      | MLOps (B. Wolf)                                          |     
 | Lundi 8 Avril à 13h      | ** Travail Ecrit ** (S. Rumley)                         |           
 | Jeudi 13 Mai à 10h15     | Rendu code + rapport de groupe                          |   
 | Semaine du 20 mai        | Défenses orales individuelles selon horaire pré-annoncé |
