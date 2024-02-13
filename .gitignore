@@ -6,3 +6,4 @@ settings.json
 __mkdocs_*.yml
 .DS_Store
 .pages
+*.wzip

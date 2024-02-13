@@ -3,19 +3,9 @@ name: publish-websites
 on:
   workflow_dispatch:
   push:
-    branches:
-      - "main"
-    tags:
-      - "v*"
-
-# Change the following for conditional deployment
-env:
-  LECTURE_SHOW: 999
-  EXAM_SHOW_OBJECTIVES: 999
-  EXERCISE_SHOW_DATA: 999
-  EXERCISE_SHOW_SOLUTION: 999
-  ASSIGNMENT_SHOW_DATA: 999
-  ASSIGNMENT_SHOW_SOLUTION: 999
+  pull_request:
+  schedule:
+    - cron: '15 3 * * *'
 
 jobs:
   # Build site
@@ -27,23 +17,40 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Build mkdocs site
-        uses: ./.github/actions/mkdocs-edu
-
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Poetry
+        run: python -m pip install poetry==1.5.1
+      - name: Configure poetry
+        run: poetry config virtualenvs.in-project true
+      - name: Cache the virtualenv
+        uses: actions/cache@v3
+        with:
+          path: ./.venv
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/poetry.lock') }}
+      - name: Install dependencies
+        run: poetry install --no-root
+      - name: Build site
+        run: poetry run mkdocs build -d public
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: public
 
   # Deploy site to Github pages
   deploy:
     needs: build
+    if: >
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_dispatch') ||
+      (github.event_name == 'schedule')
     permissions:
-      pages: write # to deploy to Pages
-      id-token:
-        write # to verify the deployment originates
-        # from an appropriate source
+      # to deploy to Pages
+      pages: write
+      # to verify the deployment originates from an appropriate source
+      id-token: write
 
     environment:
       name: github-pages
@@ -53,4 +60,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
