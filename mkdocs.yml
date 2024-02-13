@@ -7,15 +7,10 @@ extra:
   show_page_revision_on_all_pages: false
   teacher_name: "Jacques Supcik"
   year: "2023-2024"
-
-  lecture_week: !ENV [LECTURE_WEEK, "999"]
-  lecture_week: !ENV [LECTURE_WEEK, "999"]
-  exercice_week: !ENV [EXERCISE_WEEK, "999"]
-  assignment_week: !ENV [ASSIGNMENT_WEEK, "999"]
-  exercice_show_solution: !ENV [EXERCICE_SHOW_SOLUTION, "999"]
-  assignment_show_solution: !ENV [ASSIGNMENT_SHOW_SOLUTION, "999"]
-  exam_show_objectives: !ENV [EXAM_SHOW_OBJECTIVES, "999"]
-
+  teams_name: DevOps - ID3
+  teams_code: mzb6ojm
+  class_names:
+    - ISC-ID-3
 
   consent:
     title: Utilisation des cookie
@@ -25,6 +20,8 @@ extra:
       et déterminer si les utilisateurs trouvent ce qu'ils recherchent.
       Avec votre consentement, vous nous aidez à améliorer notre documentation.
   social:
+    - icon: material/microsoft-teams
+      link: https://teams.microsoft.com/l/team/19%3a1MW2cVOrZ_s5iAyWcBpGRgXYTwfNPiO97yme__t8osk1%40thread.tacv2/conversations?groupId=155b46a4-7016-4c52-960f-6db7a7b0ce13&tenantId=a372f724-c0b2-4ea0-abfb-0eb8c6f84e40
     - icon: material/web
       link: https://www.heia-fr.ch/fr/
     - icon: fontawesome/brands/facebook
@@ -50,8 +47,12 @@ theme:
   favicon: "assets/images/favicon.ico"
   features:
     - content.code.annotate
-    - navigation.sections
     - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.tracking
+    - content.tabs.link
 
 extra_css:
   - "stylesheets/extra.css"
