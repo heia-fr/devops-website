@@ -7,11 +7,13 @@ title: Évaluation
 La note sera établie sur la base de trois évaluations portant sur :
 
 1. Une évaluation écrite individuelle (S. Rumley).
-2. ** Un entretien individuel** où seront sondées les contributions de chaque étudiant **et** sa maîtrise
+2. Une note de projet:
+  1. ** Un entretien individuel** où seront sondées les contributions de chaque étudiant **et** sa maîtrise
    générale du projet.
-3. Une note de groupe pour le projet réalisé (en nous laissant le droit de donner des bonus/malus individuels voir une note différente si le travail d'un individu est jugé insufissant par rapport au travail du reste du groupe). 
+  2. Une note de groupe pour le projet réalisé (avec le droit de donner des bonus/malus individuels voir une note différente par individu selon les critères communiqués par le prof responsable de chaque aspect du projet). 
 
-La note attribuée au projet de groupe tiendra essentiellement compte des critères suivants :
+Vous recevrez les critères d'évalution de chaque aspect du projet par le prof. responsable. Ceci dit:
+La note attribuée au projet de groupe tiendra essentiellement compte des critères suivants:
  
 - L'organisation du groupe: distribution équitable du travail, travail **régulier** le long du semestre, tenue des réunions, planification et conduite du projet, traces écrites (tenue du journal conduite, PV de séances, messages de commit propres). Le respect des échéances des différentes étapes du projet (selon les consignes de chaque prof.).
 - L'utilisation du Gitlab board pour la planification des tâches (tâches bien définies, estimées, tenue du board à jour: backlog, tâches en cours de réaliser, réalisés, ...)	
