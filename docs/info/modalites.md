@@ -12,7 +12,7 @@ Durant les 5 premières semaines, une série de cours autour de la thématique D
    - Les cours de jeudi serviront d'appui au projet et vous expliciteront les différents aspects requis et surlesquels l'évaluation du projet protera.
 vous seront donnés selon le plan suivant:
 
-
+<!--
 | Date                     | Sujet           
 | :-----------------------:|:-------------------------------------------------------:|
 | Lundi 19 Février à 10h15 | Intro collectif sur DevOps, Introduction du Projet      |
@@ -29,6 +29,7 @@ vous seront donnés selon le plan suivant:
 | Jeudi 13 Mai à 10h15     | Rendu code + rapport de groupe                          |   
 | Semaine du 20 mai        | Défenses orales individuelles selon horaire pré-annoncé |
 
+-->
 
 -  Introduction au DevSecOps, aux meilleures pratiques en matière de sécurité et maintenance
    évolutive de développement (SSDLC : clean code, secure code, code review, threat modeling,

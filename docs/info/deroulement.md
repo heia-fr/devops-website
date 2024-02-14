@@ -77,8 +77,19 @@ au sein de chaque groupe.
 
 ### Jeudi 21.03 à 10h15
 
-## P6 : Jeudi 28.03 à 13h
--  MLOps (. Wolf) 
+## P6 : Lundi et Jeudi 
+
+
+### Lundi 25.03 à 10h15
+-  MLOps Théorie (B. Wolf) 
+
+### Jeudi 28.03 à 10h15
+-  MLOps (B. Wolf)
+
+!!! note "Livrables"
+    - Proposition aspect "Machine learning"
+    - Structure générale MLOps.
+    - Propositions MLOps
 
 !!! note "Livrables"
     - Proposition aspect "Machine learning"
@@ -87,9 +98,11 @@ au sein de chaque groupe.
 ## P8 : Lundi 08.04 à 13h
 ** Travail Ecrit ** (S. Rumley)   
 
+
 ## P2 - P11
 
 - Conception, implémentation incrémentale des propositions validées
+- Les profs se réservent le droit de vous convoquer pour des présentations dans le courant de cette période
 
 !!! note "Livrables"
     

@@ -10,7 +10,7 @@ La note sera établie sur la base de trois évaluations portant sur :
 2. Une note de projet:
   1. ** Un entretien individuel** où seront sondées les contributions de chaque étudiant **et** sa maîtrise
    générale du projet.
-  2. Une note de groupe pour le projet réalisé (avec le droit de donner des bonus/malus individuels voir une note différente par individu selon les critères communiqués par le prof responsable de chaque aspect du projet). 
+  2. Une note de groupe pour le projet réalisé (avec le droit de donner des bonus/malus individuels voir une note différente par individu selon les critères communiqués par le prof responsable g chaque aspect du projet). 
 
 Vous recevrez les critères d'évalution de chaque aspect du projet par le prof. responsable. Ceci dit:
 La note attribuée au projet de groupe tiendra essentiellement compte des critères suivants:
