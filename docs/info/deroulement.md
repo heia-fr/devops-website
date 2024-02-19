@@ -62,12 +62,12 @@ au sein de chaque groupe.
 
 ### Jeudi 14.03 à 08h15
 
- - Sécurité dans un CI/CD pipeline? (M. Mäder)                  
-- DevSecOps ?
+- Sécurité dans un CI/CD pipeline (M. Mäder)                  
 - DevSecOps / SSDLC, c'est quoi ?
+- Hands-on et exercises sur un application *mal* programmée
 
 !!! note "Livrables"
-    - Small Threat Model of the SooZ App
+    - Threat Model of the SooZ App
     - Pipeline qui execute un DAST 
 
 ## P5 : Lundi et Jeudi
@@ -96,7 +96,7 @@ au sein de chaque groupe.
     - Propositions MLOps
 
 ## P8 : Lundi 08.04 à 13h
-** Travail Ecrit ** (S. Rumley)   
+**Travail Ecrit** (S. Rumley)   
 
 
 ## P2 - P11
