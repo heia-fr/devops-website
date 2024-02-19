@@ -65,6 +65,7 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Sécurité dans un CI/CD pipeline? (M. Mäder)
 - DevSecOps ?
 - DevSecOps / SSDLC, c'est quoi ?
+- Hands-on et exercises sur un application *mal* programmée
 
 !!! note "Livrables"
 - Small Threat Model of the SooZ App
@@ -96,7 +97,7 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Propositions MLOps
 
 ## P8 : Lundi 08.04 à 13h
-** Travail Ecrit ** (S. Rumley)
+**Travail Ecrit** (S. Rumley)   
 
 
 ## P2 - P11

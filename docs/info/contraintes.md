@@ -7,7 +7,7 @@ title: Contraintes Technologiques
 | Partie du projet     | Contraintes Technologiques |
 | -------------------- |----------------------------|
 | Tests Automatiques   | Javascript, Cypress, jest  |
-| Sécurité             | SonarCube, OWASP ZapProxy (DAST)  |
+| Sécurité             | Semgrep, OWASP ZapProxy    |
 | MLOps                | DVC et selon cours         |
 | Outils de monitoring | SonarCube, SonarLint       |
 | CI/CD                | gitlab, github actions     |
