@@ -4,12 +4,12 @@ title: Exercises and security pipeline tools
 
 # {{ title }}
 
-The main goal of these exercises is to include security tools and mechanisms into your CI/CD pipeline. For this purpose you should work on two different projects (repos). The main work will be done of the repo where the Sooze application is. A sandbox, for testing and playing is available here: https://gitlab.forge.hefr.ch/devsecops/calculatorapi (Calculator REST API)
+The main goal of these exercises is to include security tools and mechanisms into your CI/CD pipeline. For this purpose you should work on two different projects (repos). The main work will be done of the repo where the Sooze application is. A sandbox for testing and playing is available here: https://gitlab.forge.hefr.ch/devsecops/calculatorapi (Calculator REST API)
 
 ## Question 1 - Fork the sandbox repository - the calculator REST API
-Get a copy, fork it!, of this repo (https://gitlab.forge.hefr.ch/devsecops/calculatorapi), which contains a working, but very shaky pipeline. The repo and its purpose is described directly in the repo's README.md file.
+Get a copy (fork it!) of this repo (https://gitlab.forge.hefr.ch/devsecops/calculatorapi), which contains a working, but very shaky pipeline. The repo and its purpose is described directly in the repo's README.md file.
 
-Fork this repo in your group and use it to play around
+Fork this repo in your group and use it to play around.
 
 ## Question 2 - Analyze the existing pipeline and improve it
 The existing pipeline launches some unit tests and executes also a coverage analysis of the tests. The result of the coverage test can be found in the pages section of the repository.
@@ -82,10 +82,10 @@ Describe the sooze infrastructure with the help of a threat model. Follow the ST
 
 **→ This should be done for the end of your project**
 
-## Question 4 - Commit signing
-Turn your commit signing on.
+## Question 4 - Proper user management (IAM)
+Turn your commit signing on. Ensure that the members of the repo has the rights they need (need-to-know principle). Protect the credentials as seen in the course.
 
 ## Question 5 - DAST for Sooze repo
 Integrate in your final pipeline a DAST check for the Sooze application.
 
-Provide some specific API routes, that should be tested with the selected DAST solution. Describe what kind of API you choose for testing, why?
+Provide some specific API routes, that should be tested with the selected DAST solution. Describe what kind of API you choose for testing and why?
