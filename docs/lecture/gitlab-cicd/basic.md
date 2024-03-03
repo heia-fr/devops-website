@@ -12,7 +12,7 @@ Créez un nouveau dossier et ajoutez-y ces deux fichiers "go.mod" et "hello-devo
 ``` text title="go.mod"
 module hello-devops
 
-go 1.20
+go 1.22.0
 ```
 
 ``` Go title="hello-devops.go"
@@ -45,7 +45,7 @@ et vous devriez obtenir quelque chose qui ressemble à ça :
 
 ``` text
 Hello DevOps!
-Go version: go1.19.5
+Go version: go1.22.0
 Architecture: amd64 (ou arm64)
 OS: windows (ou linux, ou darwin)
 ```
@@ -61,26 +61,26 @@ image Docker. C'est ce que nous allons faire maintenant.
 Créez un fichier "Dockerfile" dans le même dossier :
 
 ``` Dockerfile title="Dockerfile"
-FROM public.ecr.aws/docker/library/golang:1.20 AS builder
+FROM golang:1.22 AS builder
 WORKDIR /app
 COPY go.mod hello-devops.go ./
 RUN go build .
 
-FROM public.ecr.aws/docker/library/alpine:latest
+FROM alpine:3.19
 WORKDIR /root/
 COPY --from=builder /app/hello-devops /usr/local/bin/hello-devops
 CMD ["/usr/local/bin/hello-devops"]
 ```
 
 !!! warning "Attention"
-    Dans le `Dockerfile` ci-dessus, nous téléchargeons les images du "Elastic Container Registry" de Amazon (public.ecr.aws)
-    et non du "standard" Docker (DockerHub). Ce choix permet de s'affranchir de la [limite de
+    Dans le `Dockerfile` ci-dessus, nous téléchargeons les images du "registry" DockerHub.
+    En principe, les images téléchargées depuis DockerHub sont sauvées dans un cache local
+    et on ne devrait pas avoir de problème avec la [limite de
     100 téléchargements](https://docs.docker.com/docker-hub/download-rate-limit/#whats-the-download-rate-limit-on-docker-hub)
     que nous impose Docker.
-
-    **Si vous téléchargez les images directement depuis DockerHub, vous risquez de bloquer les tâches de
-    toute l'école pendant 6 heures !**
-
+    
+    Notez que pour contourner cette limite, vous pouvez aussi utiliser d'autres "registry"
+    comme le [Public Elastic Container Registry d'Amazone](https://gallery.ecr.aws/).
 
 construisez une image Docker :
 
@@ -94,17 +94,17 @@ et exécutez-la :
 docker run --rm hello-devops
 ```
 
-Vous obtiendrez quelque chose comme ça :
+Vous obtenez quelque chose comme ça :
 
 ``` text
 Hello DevOps!
-Go version: go1.20.1
-Architecture: amd64 (ou arm64)
+Go version: go1.22.0
+Architecture: arm64
 OS: linux
 ```
 
-l'architecture sera celle de votre machine et l'OS sera "linux", car
-le container fonctionne dans un environnement Linux.
+l'architecture est la même que votre machine (amd64 ou arm64), mais l'OS est
+maintenant "linux", car le container fonctionne bien dans un environnement Linux.
 
 ## Utilisation du CI/CD
 
@@ -115,10 +115,10 @@ et laisser les ordinateurs du _cloud_ faire le travail.
 Ajoutez le fichier ".gitlab-ci.yml" à votre dossier :
 
 ``` yaml title=".gitlab-ci.yml"
-image: public.ecr.aws/docker/library/docker:19.03.15
+image: docker:25.0
 
 services:
-  - public.ecr.aws/docker/library/docker:19.03.15-dind
+  - docker:25.0-dind
 
 variables:
   IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
@@ -138,18 +138,16 @@ build:
 ```
 
 !!! note "Note"
-    le service `docker:19.03.15-dind` (dind = Docker-in-Docker) permet de faire
-    tourner du Docker dans du Docker. La version utilisée (19.03.15) n'est pas
-    la plus récente, mais avec l'installation de l'école, c'est la dernière
-    version qui fonctionne correctement. N'hésitez pas à me dire si vous
-    réussissez à utiliser une image plus récente
+    le service `docker:25.0-dind` (dind = Docker-in-Docker) permet de faire
+    tourner du Docker dans du Docker.
 
     Le Service Informatique recommande l'utilisation de [Kaniko](https://docs.gitlab.com/ee/ci/docker/using_kaniko.html)
     pour la création d'image Docker. Cependant, Kaniko n'est pas encore capable
     de faire des images multi-architectures et c'est pourquoi nous ne l'utilisons
     pas ici. La [documentation](https://docs.gitlab.com/ee/ci/docker/using_kaniko.html#build-a-multi-arch-image)
     fait mention d'un "manifest-tool" pour construire les images multi-architectures, mais
-    ça ne m'a pas convaincu. 
+    je trouve que c'est un peu compliqué et je préfère la méthode que je vais vous
+    montrer dans le chapitre suivant.
 
 Avec ce fichier, vous indiquez à GitLab ce qu'il doit faire quand une nouvelle
 version est _poussée_ (push) dans le dépôt.
@@ -161,10 +159,10 @@ Après avoir synchronisé votre dépôt (avec `git push`), vous devriez voir une
 entrée dans la section "CI/CD" --> "Pipelines" :
 
 <figure markdown>
-![](img/cicd0.jpg)
+![](img/cicd0.webp){: width="650" }
 </figure>
 
-Vous devriez aussi avoir une entrée dans "Packages and registries" --> "Container registry".
+Vous devriez aussi avoir une entrée dans "Deploy" --> "Container registry".
 
 <figure markdown>
 ![](img/cicd1.jpg)
@@ -188,7 +186,7 @@ et vous devriez obtenir ceci :
 
 ``` text
 Hello DevOps!
-Go version: go1.20.1
+Go version: go1.22.0
 Architecture: amd64
 OS: linux
 ```

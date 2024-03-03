@@ -20,10 +20,10 @@ Nous allons donc modifier notre projet pour que le _runner_ produise
 Modifiez le fichier ".gitlab-ci.yml" avec ce contenu:
 
 ``` yaml title=".gitlab-ci.yml"
-image: public.ecr.aws/docker/library/docker:19.03.15
+image: docker:25.0
 
 services:
-  - public.ecr.aws/docker/library/docker:19.03.15-dind
+  - docker:25.0-dind
 
 variables:
   IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
@@ -37,17 +37,16 @@ before_script:
 build:
   stage: build
   script:
-    - mkdir -p /usr/local/lib/docker/cli-plugins
-    - wget https://github.com/docker/buildx/releases/download/v0.10.3/buildx-v0.10.3.linux-amd64 -O /usr/local/lib/docker/cli-plugins/docker-buildx
-    - chmod a+x /usr/local/lib/docker/cli-plugins/docker-buildx
     - docker buildx ls
-    - docker buildx build --push --platform linux/amd64 --tag "${IMAGE_TAG_SLUG}-amd64" .
-    - docker buildx build --push --platform linux/arm64 --tag "${IMAGE_TAG_SLUG}-arm64" .
+    # Build tagged images for various architectures
+    - docker buildx build --push --platform linux/amd64  --tag "${IMAGE_TAG_SLUG}-amd64" .
+    - docker buildx build --push --platform linux/arm64  --tag "${IMAGE_TAG_SLUG}-arm64" .
     - docker buildx build --push --platform linux/arm/v7 --tag "${IMAGE_TAG_SLUG}-armv7" .
     - docker manifest create ${IMAGE_TAG_SLUG} "${IMAGE_TAG_SLUG}-amd64" "${IMAGE_TAG_SLUG}-arm64" "${IMAGE_TAG_SLUG}-armv7"
     - docker manifest push ${IMAGE_TAG_SLUG}
-    - docker buildx build --push --platform linux/amd64 --tag "${IMAGE_TAG_LATEST}-amd64" .
-    - docker buildx build --push --platform linux/arm64 --tag "${IMAGE_TAG_LATEST}-arm64" .
+    # Build latest images for various architectures
+    - docker buildx build --push --platform linux/amd64  --tag "${IMAGE_TAG_LATEST}-amd64" .
+    - docker buildx build --push --platform linux/arm64  --tag "${IMAGE_TAG_LATEST}-arm64" .
     - docker buildx build --push --platform linux/arm/v7 --tag "${IMAGE_TAG_LATEST}-armv7" .
     - docker manifest create ${IMAGE_TAG_LATEST} "${IMAGE_TAG_LATEST}-amd64" "${IMAGE_TAG_LATEST}-arm64" "${IMAGE_TAG_LATEST}-armv7"
     - docker manifest push ${IMAGE_TAG_LATEST}
@@ -92,14 +91,15 @@ déployez ce projet sur Gitlab.
 Ajoutez le fichier ".gitlab-ci.yml" suivant:
 
 ``` yaml title=".gitlab-ci.yml"
-image: public.ecr.aws/docker/library/docker:19.03.15
+image: docker:25.0
 
 services:
-  - public.ecr.aws/docker/library/docker:19.03.15-dind
+  - docker:25.0-dind
 
 variables:
   IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
+  DOCKER_CLI_EXPERIMENTAL: enabled
 
 before_script:
   - docker info
@@ -108,23 +108,35 @@ before_script:
 build:
   stage: build
   script:
-    - mkdir -p /usr/local/lib/docker/cli-plugins
-    - wget https://github.com/docker/buildx/releases/download/v0.10.3/buildx-v0.10.3.linux-amd64 -O /usr/local/lib/docker/cli-plugins/docker-buildx
-    - chmod a+x /usr/local/lib/docker/cli-plugins/docker-buildx
-    - docker buildx create --use
+    - docker context create devops-context
+    - docker context ls
+    - docker buildx create --name mutliarch-builder --use devops-context
     - docker buildx ls
-    - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $IMAGE_TAG_SLUG -t$IMAGE_TAG_LATEST  --push .
+    - docker buildx inspect mutliarch-builder --bootstrap
+    - >
+      docker buildx build
+      --platform linux/amd64,linux/arm64,linux/arm/v7
+      --tag $IMAGE_TAG_SLUG
+      --tag $IMAGE_TAG_LATEST
+      --provenance false
+      --push .
 ```
 
 Après avoir syncronisé votre dépôt, le CI/CD construira l'image multi-architectures et la publiera
-dans le _registry_ de GitLab (Package and Registries --> Container Registry). Mais l'interface web de
-GitLab aura de la peine avec cette image :
+dans le _registry_ de GitLab (Deploy --> Container Registry). Mais l'interface web de
+GitLab n'affiche pas les détail des architectures :
 
 <figure markdown>
-![](img/cicd3.jpg)
+![](img/cicd3.png)
 </figure>
 
 Par contre l'image fonctionne très bien et vous pouvez l'utiliser comme dans la section précédente.
+
+Il y a actuellement un [epic](https://gitlab.com/groups/gitlab-org/-/epics/11952) ouvert pour améliorer l'interface web de GitLab pour les images multi-architectures :
+
+<figure markdown>
+![](img/epic-11952.png)
+</figure>
 
 ## Publication de l'image dans le DockerHub
 
@@ -166,15 +178,16 @@ votre _user name_ sur Docker Hub. Protégez le "DOCKERHUB_TOKEN" en cochant la c
 Remplacez le contenu du fichier ".gitlab-ci.yml" par ceci :
 
 ```yaml title=".gitlab-ci.yml"
-image: public.ecr.aws/docker/library/docker:19.03.15
+image: docker:25.0
 
 services:
-  - public.ecr.aws/docker/library/docker:19.03.15-dind
+  - docker:25.0-dind
 
 variables:
   DOCKERHUB_PROJECT: devops
-  IMAGE_TAG_LATEST: ${DOCKERHUB_USERNAME}/${DOCKERHUB_PROJECT}:latest
   IMAGE_TAG_SLUG: ${DOCKERHUB_USERNAME}/${DOCKERHUB_PROJECT}:${CI_COMMIT_REF_SLUG}
+  IMAGE_TAG_LATEST: ${DOCKERHUB_USERNAME}/${DOCKERHUB_PROJECT}:latest
+  DOCKER_CLI_EXPERIMENTAL: enabled
 
 before_script:
   - docker info
@@ -183,12 +196,17 @@ before_script:
 build:
   stage: build
   script:
-    - mkdir -p /usr/local/lib/docker/cli-plugins
-    - wget https://github.com/docker/buildx/releases/download/v0.10.3/buildx-v0.10.3.linux-amd64 -O /usr/local/lib/docker/cli-plugins/docker-buildx
-    - chmod a+x /usr/local/lib/docker/cli-plugins/docker-buildx
-    - docker buildx create --use
+    - docker context create devops-context
+    - docker context ls
+    - docker buildx create --name mutliarch-builder --use devops-context
     - docker buildx ls
-    - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $IMAGE_TAG_LATEST -t $IMAGE_TAG_SLUG --push .
+    - docker buildx inspect mutliarch-builder --bootstrap
+    - >
+      docker buildx build
+      --platform linux/amd64,linux/arm64,linux/arm/v7
+      --tag $IMAGE_TAG_SLUG
+      --tag $IMAGE_TAG_LATEST
+      --push .
 ```
 
 Remplacez la variable `DOCKERHUB_PROJECT` par le nom de votre repository sur Docker Hub et mettez à
