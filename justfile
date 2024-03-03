@@ -1,6 +1,15 @@
 prefix := "/"
 
-archive_2023:
+serve:
+    #!/usr/bin/env bash
+    poetry run mkdocs serve
+
+all:
+    #!/usr/bin/env bash
+    set -euxo pipefail
+    CALENDAR_TODAY="today in 10 years" poetry run mkdocs serve
+
+archive:
     #!/usr/bin/env bash
     set -euxo pipefail
     target="devops-website-2022-2023.wzip"
