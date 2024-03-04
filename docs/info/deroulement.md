@@ -24,8 +24,8 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Exigences de qualité du code (S. Rumley)
 
 !!! note "Livrables"
-- Annonces des groupes formés (canal Teams)
-- Fork du projet et accès aux profs en maintainer.
+    - Annonces des groupes formés (canal Teams)
+    - Fork du projet et accès aux profs en maintainer.
 
 ## P2: Lundi
 
@@ -34,7 +34,7 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Tooling (S. Rumley)
 
 !!! note "Livrables"
-- Synthèse de pré-analyse de l'application
+    - Synthèse de pré-analyse de l'application
 
 
 ## P3: Lundi et Jeudi
@@ -44,15 +44,15 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Robustesse du code (S. Rumley)
 
 !!! note "Livrables"
-- Propositions Monitoring
+    - Propositions Monitoring
 
 ### Jeudi 07.03 à 10h15
 
 - Intégration et Déploiement continu CI/CD (J.Supcik)
 
 !!! note "Livrables"
-- Propositions CI/CD
-- en fin de projet: github actions (ou gitlab actions?)
+    - Propositions CI/CD
+    - en fin de projet: configuration CI/CD pour GitLab (ou GitHub Actions)
 
 ## P4 : Lundi et Jeudi
 
@@ -68,8 +68,8 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Hands-on et exercises sur un application *mal* programmée
 
 !!! note "Livrables"
-- Small Threat Model of the SooZ App
-- Pipeline qui execute un DAST
+    - Small Threat Model of the SooZ App
+    - Pipeline qui execute un DAST
 
 ## P5 : Lundi et Jeudi
 
@@ -88,9 +88,9 @@ professeur concerné par le rendu pour demander une validation des propositions,
 -  MLOps (B. Wolf)
 
 !!! note "Livrables"
-- Proposition aspect "Machine learning"
-- Structure générale MLOps.
-- Propositions MLOps
+    - Proposition aspect "Machine learning"
+    - Structure générale MLOps.
+    - Propositions MLOps
 
 !!! note "Livrables"
 - Proposition aspect "Machine learning"
@@ -106,7 +106,6 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Les profs se réservent le droit de vous convoquer pour des présentations dans le courant de cette période
 
 !!! note "Livrables"
-
     - Reporting hedomadaire
     - Commits "propres" et réguliers
     - PVs, et journaux de travail à jour
@@ -116,7 +115,6 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Finalisation
 
 !!! note "Livrables"
-
     - Rapport final
     - Code final sur branche "main"
 
@@ -126,7 +124,6 @@ professeur concerné par le rendu pour demander une validation des propositions,
 - Feedback
 
 !!! note "Livrables"
-
     - Évaluation du module 
 
 
