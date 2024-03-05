@@ -43,8 +43,11 @@ professeur concerné par le rendu pour demander une validation des propositions,
 
 - Robustesse du code (S. Rumley)
 
-!!! note "Livrables"
-    - Propositions Monitoring
+!!! note "Livrable"
+    - Pour le 15 mars : 
+        - Intégration initiale de SonarQube dans le projet
+        - Rapport d'analyse de l'application. Quelles sont vos recommendations niveau qualité du code, hygiène, etc ?
+    - en fin de projet : SonarQube est utilisé pour monitorer la qualité des parties principales du code
 
 ### Jeudi 07.03 à 10h15
 
@@ -73,8 +76,13 @@ professeur concerné par le rendu pour demander une validation des propositions,
 
 ## P5 : Lundi et Jeudi
 
-### Lundi 18.03 à 13h
+### Lundi 18.03 ATTENTION HORAIRE particulier à 10h
 -  "Testing Theory" (S. Rumley)
+
+
+!!! note "Livrables"
+- En fin de projet : il est possible de lancer des tests, la CI lance des tests, la couverture des tests est mesurée. SonarQube monitore cette couverture.
+
 
 ### Jeudi 21.03 à 10h15
 
