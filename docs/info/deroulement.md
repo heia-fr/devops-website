@@ -20,10 +20,12 @@ fait partie du travail à réaliser au sein de chaque groupe.
 ## P1 : Lundi et Jeudi
 
 ### Lundi 19.02 à 10h15
+
 - Introduction: DevOps, c'est quoi ?
 - Introduction du Projet
 
 ### Jeudi 22.02 à 8h30
+
 - Exigences de qualité du code (S. Rumley)
 
 !!! note "Livrables"
@@ -39,7 +41,6 @@ fait partie du travail à réaliser au sein de chaque groupe.
 !!! note "Livrables"
     - Synthèse de pré-analyse de l'application
 
-
 ## P3: Lundi et Jeudi
 
 ### Lundi 04.03 à (attention horaire particulier) 15h
@@ -49,7 +50,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
 !!! note "Livrable"
     - Pour le 15 mars : 
         - Intégration initiale de SonarQube dans le projet
-        - Rapport d'analyse de l'application. Quelles sont vos recommendations niveau qualité du code, hygiène, etc ?
+        - Rapport d'analyse de l'application. Quelles sont vos recommandations, niveau qualité du code, hygiène, etc ?
     - en fin de projet : SonarQube est utilisé pour monitorer la qualité des parties principales du code
 
 ### Jeudi 07.03 à 10h15
@@ -71,33 +72,34 @@ fait partie du travail à réaliser au sein de chaque groupe.
 - Sécurité dans un CI/CD pipeline? (M. Mäder)
 - DevSecOps ?
 - DevSecOps / SSDLC, c'est quoi ?
-- Hands-on et exercises sur un application *mal* programmée
+- Hands-on et exercices sur une application *mal* programmée
 
 !!! note "Livrables"
     - Small Threat Model of the SooZ App
-    - Pipeline qui execute un DAST
+    - Pipeline qui exécute un DAST
 
 ## P5 : Lundi et Jeudi
 
 ### Lundi 18.03 ATTENTION HORAIRE particulier à 10h
--  "Testing Theory" (S. Rumley)
+
+- "Testing Theory" (S. Rumley)
 
 !!! note "Livrables"
     - En fin de projet : il est possible de lancer des tests, la CI lance
       des tests, la couverture des tests est mesurée. SonarQube monitore
       cette couverture.
 
-
 ### Jeudi 21.03 à 10h15
 
 ## P6 : Lundi et Jeudi
 
-
 ### Lundi 25.03 à 10h15
--  MLOps Théorie (B. Wolf)
+
+- MLOps Théorie (B. Wolf)
 
 ### Jeudi 28.03 à 10h15
--  MLOps (B. Wolf)
+
+- MLOps (B. Wolf)
 
 !!! note "Livrables"
     - Proposition aspect "Machine learning"
@@ -109,16 +111,17 @@ fait partie du travail à réaliser au sein de chaque groupe.
     - Propositions MLOps
 
 ## P8 : Lundi 08.04 à 13h
-**Travail Ecrit** (S. Rumley)   
 
+**Travail Ecrit** (S. Rumley)
 
 ## P2 - P11
 
 - Conception, implémentation incrémentale des propositions validées
-- Les profs se réservent le droit de vous convoquer pour des présentations dans le courant de cette période
+- Les profs se réservent le droit de vous convoquer pour des
+  présentations dans le courant de cette période
 
 !!! note "Livrables"
-    - Reporting hedomadaire
+    - Reporting hebdomadaire
     - Commits "propres" et réguliers
     - PVs, et journaux de travail à jour
 
@@ -130,16 +133,10 @@ fait partie du travail à réaliser au sein de chaque groupe.
     - Rapport final
     - Code final sur branche "main"
 
-# P12
+## P12
 
 - Défenses orales individuelles
 - Feedback
 
 !!! note "Livrables"
-    - Évaluation du module 
-
-
-
-
-
-
+    - Évaluation du module
