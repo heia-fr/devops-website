@@ -4,15 +4,18 @@ title: Déroulement général - Dates clés
 
 # {{ title }}
 
-Le tableau suivant résume les étapes principales du projet et fixe les échéances qui doivent impérativement
-être respectées. Ce calendrier ne constitue pas un planning détaillé de développement, adapté à chaque
-groupe. En effet, l'élaboration d'un planning de développement détaillé fait partie du travail à réaliser
-au sein de chaque groupe.
+Le tableau suivant résume les étapes principales du projet et fixe les
+échéances qui doivent impérativement être respectées. Ce calendrier ne
+constitue pas un planning détaillé de développement, adapté à chaque
+groupe. En effet, l'élaboration d'un planning de développement détaillé
+fait partie du travail à réaliser au sein de chaque groupe.
 
 !!! warning "Attention"
-Les délais des livrables sont fixés à la fin de la dernière semaine précisées (le dernier commit
-réalisé avant minuit, le dimanche de la semaine en question, fait foi). Il revient au groupe de solliciter le
-professeur concerné par le rendu pour demander une validation des propositions, afin de pouvoir avancer.
+    Les délais des livrables sont fixés à la fin de la dernière semaine
+    précisées (le dernier commit réalisé avant minuit, le dimanche de la
+    semaine en question, fait foi). Il revient au groupe de solliciter
+    le professeur concerné par le rendu pour demander une validation des
+    propositions, afin de pouvoir avancer.
 
 ## P1 : Lundi et Jeudi
 
@@ -79,9 +82,10 @@ professeur concerné par le rendu pour demander une validation des propositions,
 ### Lundi 18.03 ATTENTION HORAIRE particulier à 10h
 -  "Testing Theory" (S. Rumley)
 
-
 !!! note "Livrables"
-- En fin de projet : il est possible de lancer des tests, la CI lance des tests, la couverture des tests est mesurée. SonarQube monitore cette couverture.
+    - En fin de projet : il est possible de lancer des tests, la CI lance
+      des tests, la couverture des tests est mesurée. SonarQube monitore
+      cette couverture.
 
 
 ### Jeudi 21.03 à 10h15
@@ -101,8 +105,8 @@ professeur concerné par le rendu pour demander une validation des propositions,
     - Propositions MLOps
 
 !!! note "Livrables"
-- Proposition aspect "Machine learning"
-- Propositions MLOps
+    - Proposition aspect "Machine learning"
+    - Propositions MLOps
 
 ## P8 : Lundi 08.04 à 13h
 **Travail Ecrit** (S. Rumley)   
