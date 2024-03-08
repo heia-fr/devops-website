@@ -90,6 +90,11 @@ fait partie du travail à réaliser au sein de chaque groupe.
       cette couverture.
 
 ### Jeudi 21.03 à 10h15
+-  Testing: approches, types, et technologies (S. Ingram) 
+
+!!! note "Livrables"
+    - Propositions de test cases (unit, integration, end-to-end) selon consignes à valider
+    - Implémentation des tests
 
 ## P6 : Lundi et Jeudi
 
