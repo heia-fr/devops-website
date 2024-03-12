@@ -16,14 +16,15 @@ Ready-to-use solution help the DevSecOps team to onboard quickly security soluti
     - **Availability**: Libraries and services that can detect and block attacks at the application and network levels
     - **Authorization**: Identity management solutions whose integration allows easy authorization at the application level
 
-#### Automated security testing
+### Automated security testing
+
 **Automated** verification of source code and products forms the core of DevSecOps. Automated tests make it possible to quickly detect and eliminate errors.
 
 Thus, **the earlier a defect is discovered, the easier it can be remedied, and the less effort is required.**
 
 ![Source: IBM](img/costst.png){width=90%}
 
-Completely automated deployment pipelines - **including implicit security review and clearance/tollgates** - allow to make security aspects visible during implementation. 
+Completely automated deployment pipelines - **including implicit security review and clearance/tollgates** - allow to make security aspects visible during implementation.
 
 ==**Automation is key**==, automation of security testing is therefore not only a quality check, but also an instrument for increasing security awareness.
 
@@ -59,6 +60,7 @@ Automated security tests can be used to examine:
     ![OWASP Zap](img/owasp-zap.png){width=40%}
 
 #### Manual security testing
+
 Manual security testing is often done at the end of a development or during the operation. The most common type of manual security testing is the **Penetration testing**, where a *good* hacker (a white had) tries to find vulnerabilities. Periodical Audits are also often applied to get a better understanding about the security situation of a productive system.
 
 *This is not part of this lecture.*

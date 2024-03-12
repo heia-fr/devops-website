@@ -7,19 +7,23 @@ title: Exercises and security pipeline tools
 The main goal of these exercises is to include security tools and mechanisms into your CI/CD pipeline. For this purpose you should work on two different projects (repos). The main work will be done of the repo where the Sooze application is. A sandbox for testing and playing is available here: https://gitlab.forge.hefr.ch/devsecops/calculatorapi (Calculator REST API)
 
 ## Question 1 - Fork the sandbox repository - the calculator REST API
+
 Get a copy (fork it!) of this repo (https://gitlab.forge.hefr.ch/devsecops/calculatorapi), which contains a working, but very shaky pipeline. The repo and its purpose is described directly in the repo's README.md file.
 
 Fork this repo in your group and use it to play around.
 
 ## Question 2 - Analyze the existing pipeline and improve it
+
 The existing pipeline launches some unit tests and executes also a coverage analysis of the tests. The result of the coverage test can be found in the pages section of the repository.
 
 ### SAST
+
 How could you easily add a SAST check in the testing stage of the existing pipeline? As it is a Python environment, you should opt for `semgrep`. For Sooze application, other SAST solution (it will be covered also in the S. Rumley's lecture), like SonarQube, should be used then. 
 
 Get some inspiration here: https://docs.gitlab.com/ee/user/application_security/sast/#configure-sast-in-your-cicd-yaml 
 
 ### DAST
+
 Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: https://docs.gitlab.com/ee/user/application_security/dast/. To use the template provided by GitLab, you must include the `DAST.gitlab-ci.yml` template (See https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Security/DAST.gitlab-ci.yml)
 
 DAST tests your application will it is running. So, you must ensure that a version of your test application (calculator) runs during your DAST tests. For this, you must use DinD (Docker-in-Docker). On the gitlab inspiration site you find a lot of information about that. Here a snippet, how your pipeline could look like for launching the calculator application:
@@ -78,14 +82,17 @@ dast:
 The connection is done through the `needs` keyword between the running service (calculator) and the DAST test. The running service is described under the `services` section, it will be connected with the aliased name (calculator-app), which is then referenced for the `DAST_WEBSITE` argument.
 
 ## Question 3 - Threat model
-Describe the sooze infrastructure with the help of a threat model. Follow the STRIDE methodology and find the trust bounderies and some of potential threats.
+
+Describe the sooze infrastructure with the help of a threat model. Follow the STRIDE methodology and find the trust boundaries and some of potential threats.
 
 **→ This should be done for the end of your project**
 
 ## Question 4 - Proper user management (IAM)
+
 Turn your commit signing on. Ensure that the members of the repo has the rights they need (need-to-know principle). Protect the credentials as seen in the course.
 
 ## Question 5 - DAST for Sooze repo
+
 Integrate in your final pipeline a DAST check for the Sooze application.
 
 Provide some specific API routes, that should be tested with the selected DAST solution. Describe what kind of API you choose for testing and why?

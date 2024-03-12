@@ -42,6 +42,7 @@ The solution for this is a well-thinked **Identity and Access Management (IAM)**
     [Uber data breach, 2016](https://www.theregister.com/2018/02/07/uber_quit_github_for_custom_code_after_2016_data_breach/)
 
 #### Management of secrets and certificates
+
 High degree of automation also depends strongly on an automated **secrets management** (e.g. system to system access), thus in DevSecOps a manual secrets management is not possible!
 
 - Best practice in password management requires regular PW replacement
@@ -56,6 +57,7 @@ Usage of automated PKI is highly recommended
 ![Let's encrypt](img/letsEncrypt.png){width=50%}
 
 #### Recap - Security dangers in the CI/CD pipeline
+
 ![dangers pipeline](img/Gothuey-Pipeline-sec5.png){width=80%}
 
 
