@@ -53,7 +53,7 @@ High degree of automation also depends strongly on an automated **secrets manage
         - Hardcoded passwords are therefore very bad
 - Use mecanisms like **Vault** (HashiCorp) or **Key Vault** (Azure) to manage secrets, or [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) in Kubernetes
 
-*Demo of badly used secrets in a pipeline*
+*Demo of badly used secrets in a pipeline: [playground](https://gitlab.forge.hefr.ch/devsecops/fastapi-redis-k8s-demo)*
 
 Usage of automated PKI is highly recommended
 
