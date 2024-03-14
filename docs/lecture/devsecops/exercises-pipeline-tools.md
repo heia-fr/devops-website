@@ -12,6 +12,8 @@ Get a copy (fork it!) of this repo (https://gitlab.forge.hefr.ch/devsecops/calcu
 
 Fork this repo in your group and use it to play around.
 
+> No delivery is expected for this question.
+
 ## Question 2 - Analyze the existing pipeline and improve it
 
 The existing pipeline launches some unit tests and executes also a coverage analysis of the tests. The result of the coverage test can be found in the pages section of the repository.
@@ -81,9 +83,11 @@ dast:
 
 The connection is done through the `needs` keyword between the running service (calculator) and the DAST test. The running service is described under the `services` section, it will be connected with the aliased name (calculator-app), which is then referenced for the `DAST_WEBSITE` argument.
 
+> No delivery is expected for this question.
+
 ## Question 3 - Threat model
 
-Describe the sooze infrastructure with the help of a threat model. Follow the STRIDE methodology and find the trust boundaries and some of potential threats.
+Describe the Sooze infrastructure with the help of a threat model. Follow the STRIDE methodology and find the trust boundaries and some of potential threats. As the Sooze application is quite big, you can focus on the most important parts of the application and stay at a high level.
 
 **→ This should be done for the end of your project**
 
