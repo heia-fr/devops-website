@@ -99,4 +99,4 @@ Turn your commit signing on. Ensure that the members of the repo has the rights 
 
 Integrate in your final pipeline a DAST check for the Sooze application.
 
-Provide some specific API routes, that should be tested with the selected DAST solution. Describe what kind of API you choose for testing and why?
+Provide some specific API routes, that should be tested with the selected DAST solution. Describe what kind of API you choose for testing and why? Put a section about this work in your final report.
