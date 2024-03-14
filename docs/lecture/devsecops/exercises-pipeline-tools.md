@@ -4,11 +4,11 @@ title: Exercises and security pipeline tools
 
 # {{ title }}
 
-The main goal of these exercises is to include security tools and mechanisms into your CI/CD pipeline. For this purpose you should work on two different projects (repos). The main work will be done of the repo where the Sooze application is. A sandbox for testing and playing is available here: https://gitlab.forge.hefr.ch/devsecops/calculatorapi (Calculator REST API)
+The main goal of these exercises is to include security tools and mechanisms into your CI/CD pipeline. For this purpose you should work on two different projects (repos). The main work will be done of the repo where the Sooze application is. A sandbox for testing and playing is available here: <https://gitlab.forge.hefr.ch/devsecops/calculatorapi> (Calculator REST API)
 
 ## Question 1 - Fork the sandbox repository - the calculator REST API
 
-Get a copy (fork it!) of this repo (https://gitlab.forge.hefr.ch/devsecops/calculatorapi), which contains a working, but very shaky pipeline. The repo and its purpose is described directly in the repo's README.md file.
+Get a copy (fork it!) of this repo (<https://gitlab.forge.hefr.ch/devsecops/calculatorapi>), which contains a working, but very shaky pipeline. The repo and its purpose is described directly in the repo's README.md file.
 
 Fork this repo in your group and use it to play around.
 
@@ -22,11 +22,11 @@ The existing pipeline launches some unit tests and executes also a coverage anal
 
 How could you easily add a SAST check in the testing stage of the existing pipeline? As it is a Python environment, you should opt for `semgrep`. For Sooze application, other SAST solution (it will be covered also in the S. Rumley's lecture), like SonarQube, should be used then. 
 
-Get some inspiration here: https://docs.gitlab.com/ee/user/application_security/sast/#configure-sast-in-your-cicd-yaml 
+Get some inspiration here: <https://docs.gitlab.com/ee/user/application_security/sast/#configure-sast-in-your-cicd-yaml>
 
 ### DAST
 
-Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: https://docs.gitlab.com/ee/user/application_security/dast/. To use the template provided by GitLab, you must include the `DAST.gitlab-ci.yml` template (See https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Security/DAST.gitlab-ci.yml)
+Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: <https://docs.gitlab.com/ee/user/application_security/dast/>. To use the template provided by GitLab, you must include the `DAST.gitlab-ci.yml` template (See <https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Security/DAST.gitlab-ci.yml>)
 
 DAST tests your application will it is running. So, you must ensure that a version of your test application (calculator) runs during your DAST tests. For this, you must use DinD (Docker-in-Docker). On the gitlab inspiration site you find a lot of information about that. Here a snippet, how your pipeline could look like for launching the calculator application:
 
