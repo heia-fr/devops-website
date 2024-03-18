@@ -12,7 +12,7 @@ One example that comes to mind is GitLFS, but also DVC, lakeFS and many others.
 What most of those tools have in common in the usage of git to store meta-data about the stored data, but offload the actual data to an external storage system, such as an S3 object storage.
 
 One simple example, that easily integrates into the git workflow is DVC.
-DVC stands for **D**ata**V**ersion**C**ontrol and, among other things, handles the versioning of your data.
+DVC stands for DataVersionControl and, among other things, handles the versioning of your data.
 DVC (The company) has as its goal to create simple tools that do their job well.
 In the case of DVC which is a python tool, it follows the usage git, with very similar commands.
 

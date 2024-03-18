@@ -84,8 +84,8 @@ wandb.finish()
 ```
 
 What is also to note is that all those libraries have dedicated support for most machine learning frameworks.
-- [SKLearn](https://docs.wandb.ai/guides/integrations/scikit)
-- [PyTorch](https://docs.wandb.ai/guides/integrations/pytorch)
-- [Tensorflow](https://docs.wandb.ai/guides/integrations/tensorflow)
+ - [SKLearn](https://docs.wandb.ai/guides/integrations/scikit)
+ - [PyTorch](https://docs.wandb.ai/guides/integrations/pytorch)
+ - [Tensorflow](https://docs.wandb.ai/guides/integrations/tensorflow)
 
 You can find an excellent introduction for all this under: https://docs.wandb.ai/quickstart
