@@ -9,11 +9,13 @@ This chapter briefly describes the individual building blocks of the DevSecOps p
 ![](img/SC-SSDLC.png){ width="90%" }
 
 ### Food for thought
+
 > Today, we live our lives online. The internet has no geography. It has no borders. By creating the internet, mankind opened up a Pandora’s Box where tangible borders and recognizable enemies ceased to exist.
 >
 > Mikko Hypponen, Chief Research Officer, F-Secure
 
 ## Shift left
+
 What does shift left means?
 
 Security practices and testing are performed **earlier** in the development lifecycle, hence the term shift left can be used.
@@ -31,11 +33,13 @@ With the shift left approach, the development cycle will be improved:
 ![](img/shift-left2.webp){ width="70%" }
 
 ### Find your vulnerabilities as soon as possible!
+
 The earlier vulnerabilities are found, the easier and less costly they can be remedied. The differences between early and late detection can reach factors of up to 100x. See the following graph (IBM):
 
 ![](img/costst.png){ width="80%" }
 
 ## DevSecOps building blocks
+
 The different stages in the traditional SDLC must be extended with the security building blocks that are depicted in the following sub chapters:
 
 - [Training and Awareness](devsecops2.md)
