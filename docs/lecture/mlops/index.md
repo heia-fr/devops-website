@@ -17,7 +17,18 @@ title: "Introduction to MLOps"
 - Basic machine learning knowledge
 - Basic data-science knowledge
 
-## What is MLOps?
+## Additional resources
 
-**Soon**
+Books
+- Introducing MLOps
+- Building Machine Learning Pipelines
 
+|![img_19.png](img_19.png)|![img_20.png](img_20.png)|
+|---|---|
+
+Videos 
+- [DVC/CML](https://www.youtube.com/@dvcorg8370/videos)
+- [Google](https://www.youtube.com/@googlecloudtech/videos)
+- [Databricks](https://www.youtube.com/@Databricks/videos)
+
+**Excellent practical guid to MLOps**: https://mlops.swiss-ai-center.ch/
