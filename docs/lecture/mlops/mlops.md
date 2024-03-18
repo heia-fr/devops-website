@@ -22,7 +22,7 @@ One of the key ideas is to treat data the same way as code and models like new s
 
 ## Experiments
 At the core of machine learning projects are the experiments. The following image shows the comparison to a classical programming project.
-![img_4.png](img_4.png)
+![img_4.png](img/img_4.png)
 
 We can see some overlap with classical programming projects, which is natural, because machine learning projects also always involve programming.
 We can see that for certain elements, such as the code, the paramaters and metrics (accuracy etc.) of the experiments, we can use the classic git approach.
@@ -34,7 +34,7 @@ But for data, the created models, the execution of the experiment itself and plo
 When doing machine learning projects, there is always some kind of pipeline involved.
 Often manually executed, requiring the developer to run several CLI commands with specific parameters, they define how we go from raw data to the final deployed model.
 
-![img_13.png](img_13.png)
+![img_13.png](img/img_13.png)
 
 A reasonably standard way to represent such a pipeline comes from the bool [Building Machine Learning Pipelines](https://learning.oreilly.com/library/view/building-machine-learning/9781492053187/).
 
@@ -57,4 +57,4 @@ We can find:
 
 ## Technologies
 
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)

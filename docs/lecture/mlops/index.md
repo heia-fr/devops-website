@@ -23,7 +23,7 @@ Books
 - Introducing MLOps
 - Building Machine Learning Pipelines
 
-|![img_19.png](img_19.png)|![img_20.png](img_20.png)|
+|![img_19.png](img/img_19.png)|![img_20.png](img/img_20.png)|
 |---|---|
 
 Videos 

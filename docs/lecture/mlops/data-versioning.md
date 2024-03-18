@@ -34,7 +34,7 @@ dvc add MY_FILE_OR_FOLDER
 
 DVC will then create a small text file (in that case MY_FILE_OR_FOLDER.dvc) with the information about your data.
 
-![img_12.png](img_12.png)
+![img_12.png](img/img_12.png)
 
 From that point forwards, git only contains the .dvc file, not the actual data.
 To correctly store this, you need to add a storage location for DVC to store the data.

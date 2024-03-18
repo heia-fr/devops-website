@@ -10,13 +10,13 @@ A typical fist approach is the creation of text files in which we document our e
  - Data used
  - Results of the experiment
 
-![img_7.png](img_7.png)
+![img_7.png](img/img_7.png)
 
 This time-consuming manual process is prone to errors and not scalable in the long run.
 One easy first step to introduce MLOps principles in your workflow, is the integration of a logging framework into your jupyter notebook.
 
 ## Tools
-![img_8.png](img_8.png)
+![img_8.png](img/img_8.png)
 
 Many different tools exist to help logging experiments.
 They all offer similar features at their core:
@@ -37,11 +37,11 @@ Here is a non exhaustive list of tools that can be used:
 ## Weights and Biases
 Especially Weights and Biases (wandb) is used often and is a good choice for a standard logging framework.
 It is able to create online overview pages of your experiments:
-![img_9.png](img_9.png)
+![img_9.png](img/img_9.png)
 
 As well as more complex visualizations to compare different models:
-![img_10.png](img_10.png)
-![img_11.png](img_11.png)
+![img_10.png](img/img_10.png)
+![img_11.png](img/img_11.png)
 
 Integrating the library into your existing code (Jupyter notebook or otherwise) is simple.
 

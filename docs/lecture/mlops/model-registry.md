@@ -13,7 +13,7 @@ Various tools exist to create them, to only name a few:
 - Gitlab
 
 The models registry is often the intersection between the ML world and the operations.
-![img_17.png](img_17.png)
+![img_17.png](img/img_17.png)
 
 The model registry stores the information on:
 - How the model was trained (versions of code, data, settings)

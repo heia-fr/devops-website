@@ -21,4 +21,4 @@ Tools like [CML](https://cml.dev/) allow you to easily compare different branche
 This makes it possible to have automatic reports created for your merge requests,
 which compare the performance of a model in the main and dev branch.
 
-![img_18.png](img_18.png)
+![img_18.png](img/img_18.png)

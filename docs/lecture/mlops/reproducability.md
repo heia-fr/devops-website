@@ -26,17 +26,17 @@ For machine learning experiments, we need:
 In classical software development we mostly solved the problem of reproducability.
 We know how to version our code (git), we use standard algorithms and modern IDEs, we test our code automatically (unit tests, system tests etc.) and use CI/CD systems to automate the passage from new code to the deployed product.
 The probably most visible example of this approach is a full CI/CD pipeline (see below) automating the process based on versioned information.
-![img.png](img.png)
+![img.png](img/CICDPipeline.png)
 
 You know this approach as DevOps, which unifies development and operations.
 One major contribution of DevOps is the automation of the process, thus reducing human intervention and errors.
 It is important to note that DevOps is not a set of technologies, but a philosophy.
 
-![img_2.png](img_2.png)
+![img_2.png](img/DevOps.png)
 
 The following diagram gives a simplified overview of how a new software release is produced, and how the different parts are versioned.
 
-![img_1.png](img_1.png)
+![img_1.png](img/BinaryCreation.png)
 
 We can see that on principle, software releases should be reproducable and versioned correctly when following this general approach.
 
@@ -44,7 +44,7 @@ We can see that on principle, software releases should be reproducable and versi
 Sadly, in the world of machine learning things often do not yet work that way.
 While tools like Jupyter Notebooks are very useful and popular to quickly experiment with new ideas or visualize data,
 they are often used for the full development of a machine learning model.
-![img_3.png](img_3.png)
+![img_3.png](img/img_3.png)
 
 The rapid iterations in jupyter notebooks, while useful, offer no versioning of changes.
 This makes it very difficult to understand where certain results come from or how to reproduce them.
