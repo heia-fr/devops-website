@@ -13,6 +13,7 @@ Because of this, MLOps integrates into the DevOps technology stack and extends i
 ![img_1.png](img/img_1.png)
 
 The main thing added to the DevOps practice:
+
 - Version data as well as code
 - Log experiments that produce ML models
 - Create reproducable, versioned, data analysis pipelines
@@ -39,6 +40,7 @@ Often manually executed, requiring the developer to run several CLI commands wit
 A reasonably standard way to represent such a pipeline comes from the bool [Building Machine Learning Pipelines](https://learning.oreilly.com/library/view/building-machine-learning/9781492053187/).
 
 We can find:
+
 - Data ingestion/versioning
     - Storage, versioning
 - Data validation

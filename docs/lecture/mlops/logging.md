@@ -6,6 +6,7 @@ title: "Logging experiments"
 
 When doing machine learning experiments, one major question we have is how the different experiments we have compare to each other.
 A typical fist approach is the creation of text files in which we document our experiments.
+
  - Parameters used
  - Data used
  - Results of the experiment
@@ -20,6 +21,7 @@ One easy first step to introduce MLOps principles in your workflow, is the integ
 
 Many different tools exist to help logging experiments.
 They all offer similar features at their core:
+
  - Metrics logging
  - Plot storing, display and creation
  - Real time experiment tracking
@@ -28,6 +30,7 @@ They all offer similar features at their core:
 In addition, some of the tools integrate features that go beyond simple experiment tracking like storing and versioning code, data and trained models.
 
 Here is a non exhaustive list of tools that can be used:
+
 - https://wandb.ai
 - https://neptune.ai
 - https://clear.ml 
@@ -84,6 +87,7 @@ wandb.finish()
 ```
 
 What is also to note is that all those libraries have dedicated support for most machine learning frameworks.
+
  - [SKLearn](https://docs.wandb.ai/guides/integrations/scikit)
  - [PyTorch](https://docs.wandb.ai/guides/integrations/pytorch)
  - [Tensorflow](https://docs.wandb.ai/guides/integrations/tensorflow)

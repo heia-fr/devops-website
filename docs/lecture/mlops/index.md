@@ -20,6 +20,7 @@ title: "Introduction to MLOps"
 ## Additional resources
 
 Books
+
 - Introducing MLOps
 - Building Machine Learning Pipelines
 
@@ -27,6 +28,7 @@ Books
 |---|---|
 
 Videos 
+
 - [DVC/CML](https://www.youtube.com/@dvcorg8370/videos)
 - [Google](https://www.youtube.com/@googlecloudtech/videos)
 - [Databricks](https://www.youtube.com/@Databricks/videos)
