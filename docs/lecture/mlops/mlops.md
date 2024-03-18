@@ -42,21 +42,34 @@ A reasonably standard way to represent such a pipeline comes from the bool [Buil
 We can find:
 
 - Data ingestion/versioning
-    - Storage, versioning
+    - Handles the storage and versioning of the incoming data
 - Data validation
-    - Is the data correct? Does it satisfy my needs?
+    - Is the data correct? Does it satisfy my needs? Validate this and create reports.
 - Data pre-processing
-    - Convert, clean, complete
+    - Convert, clean, complete and filter the data based on the previous step
 - Model training /Model Tuning
-    - Tuning, optimisation, etc.
+    - This is the experimental part there models are trained and tuned
 - Model analysis
-    - Performance, validity, bias, etc.
+    - The accuracy and other metrics of the model are validated as well as potential biases analysed.
 - Model deployment
-    - Microservices, client, etc.
+    - Finally, the model is deployed using microservices, on-prem etc. approaches
 - Model feedback
-    - Drift, performance, etc.
+    - During the livetime of the model, metrics and data are collected to detect performance issues, data drift etc.
+
+This process is in general circular, as based on the metrics and data collected from the deployed model, new improved models are created.
 
 
 ## Technologies
-
+The key technologies to achieve the MLOps workflow come from the DevOps world, but are completed with specific tools when required.
 ![img_6.png](img/img_6.png)
+
+The general ecosystem of tools for MLOps is still very young and constantly changing.
+For each task, there are usually several similar tools doing the same job.
+
+In this course we look a bit more into:
+
+- [Experiment logging](logging.md)
+- [Data versioning](data-versioning.md)
+- [Automated analysis pipelines](pipelines.md)
+- [Model versioning](model-registry.md)
+- [Infrastructure needs](infrastructure.md)
