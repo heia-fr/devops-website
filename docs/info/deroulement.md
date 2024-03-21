@@ -93,8 +93,13 @@ fait partie du travail à réaliser au sein de chaque groupe.
 -  Testing: approches, types, et technologies (S. Ingram) 
 
 !!! note "Livrables"
-    - Propositions de test cases (unit, integration, end-to-end) selon consignes à valider
-    - Implémentation des tests
+    - 3 à 4 propositions de tests cases **par écrit** à soumettre jusqu'au 28.03 
+    - Chaque groupe prend contact avec la prof. pour discuter via Teams ou à distance (avant jeudi) de la proposition, en envoyant au préalable le document.
+    - Technologies de test: Cypress (pour les tests UI automatisés), qui intègre [Sinon.js](https://docs.cypress.io/api/utilities/sinon) pour les doublons de tests et [Chai](https://docs.cypress.io/guides/references/assertions) pour les "assertions".
+    - Dans la mesure du possible, tenter de spécifier de quels types de tests il s'agit (unitaires, d'intégration, tests end to end) et le type de doublons, quitte à le revisiter, le justifier, et le finaliser pour le rapport final.
+    - Ne pas hésiter à mettre dans le draft de tests cases soumis, tout vos questionnements et doutes liés aux types de test etc.
+    - Implémentation des tests (entre P2 et P11).
+    
 
 ## P6 : Lundi et Jeudi
 
