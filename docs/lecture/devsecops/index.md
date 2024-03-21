@@ -6,7 +6,7 @@ title: "Introduction to DevSecOps"
 
 In this chapter you get an **introduction** about the integration of the security addons for your DevSecOps environment.
 
-## Prerequisits
+## Prerequisites
 
 - Git knowledge
 - Base knowledge of Docker
@@ -16,7 +16,7 @@ In this chapter you get an **introduction** about the integration of the securit
 
 ## What is DevSecOps?
 
-DevSecOps is the extension of DevOps to ensure a **secure development** and a **secure operation** of the system. So, the **security** part will strech over the entire DevOps livecycle.
+DevSecOps is the extension of DevOps to ensure a **secure development** and a **secure operation** of the system. So, the **security** part will stretch over the entire DevOps lifecycle.
 
 ![](img/devsecops.png)
 <span style="font-size: 0.5rem;">Source: fortify.com</span>
@@ -34,4 +34,5 @@ To resume the most important points in DevSecOps, we have:
 Thus the DevSecOps approach helps to achieve this goal.
 
 ## MSE Slide Deck on DevSecOps
+
 The following online slide deck will be used for this lecture and is freely available for getting additional information and insights about this fascinating topic: [TSM_Cybersecurity DevSecOps](https://heia-fr-maeder.github.io/mse_cybersec/#/1)

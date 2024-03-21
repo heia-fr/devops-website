@@ -25,6 +25,7 @@ Existing sources of security requirements are easy to find out in the Internet (
 - [Minimum Information Security Requirements for Systems, Applications, and Data - University of Michigan](https://safecomputing.umich.edu/information-security-requirements)
 
 #### Threat modeling
+
 All results obtained in the threat model influence the security activities in subsequent phases of the SSDLC
 
 ![](img/threatmodel-sdlc.png){ width="70%" }

@@ -8,5 +8,5 @@ Because security is distributed throughout the **entire development process**, a
 
 ![](img/SC-SSDLC.png){ width="90%" }
 
-Continous training, awareness actions, communication channels and much more are just some of the actions that have to be done in this all over building block.
+Continuous training, awareness actions, communication channels and much more are just some of the actions that have to be done in this all over building block.
 
