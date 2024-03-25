@@ -523,13 +523,13 @@ files = [
 
 [[package]]
 name = "mkdocs-include-markdown-plugin"
-version = "6.0.4"
+version = "6.0.5"
 description = "Mkdocs Markdown includer plugin."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mkdocs_include_markdown_plugin-6.0.4-py3-none-any.whl", hash = "sha256:e7b8b5ecc41d6a3e16969cff3725ec3a391b68e9dfe1a4b4e36a8508becda835"},
-    {file = "mkdocs_include_markdown_plugin-6.0.4.tar.gz", hash = "sha256:523c9c3a1d6a517386dc11bf60b0c0c564af1071bb6de8d213106d54f752dcc1"},
+    {file = "mkdocs_include_markdown_plugin-6.0.5-py3-none-any.whl", hash = "sha256:db41aa1937a618afa3497616f457d4e51d9123b13b2034bb15505ff9ce061f86"},
+    {file = "mkdocs_include_markdown_plugin-6.0.5.tar.gz", hash = "sha256:ad10779cf0dc4ff180aaa0079163271877b3c2fd31e36d5579854fe1d4b0d1ae"},
 ]
 
 [package.dependencies]
@@ -1220,4 +1220,4 @@ bracex = ">=2.1.1"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.12"
-content-hash = "e5c7a48879d3b3e28d6f74533b47392822457b5648715a4bbca50238d66c630f"
+content-hash = "f6669a6b21f23ea979a1502305b842c068b5dc97561fde2adf2d587d9dd40932"
