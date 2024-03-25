@@ -1,5 +1,6 @@
 ---
-title: Agile testing technologies
+title: Agile Testing
 ---
 
-![slides](Agile-Testing_Technologies_2024)
+Covers testing Approaches, testing types.
+![slides](Coming Soon)
