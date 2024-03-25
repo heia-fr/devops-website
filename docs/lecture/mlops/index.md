@@ -17,9 +17,24 @@ title: "Introduction to MLOps"
 - Basic machine learning knowledge
 - Basic data-science knowledge
 
+## Evaluation
+At the end of this lecture, you will be evaluated based on the following criteria:
+
+- Ability to integrate an ML model into an existing project, following the MLOps principles
+  - MLOps principles include DevOps principles, like testing, versioning, CI/CD, etc.
+- Explain the choices made to create the MLOps pipeline
+- Explain the process of new data entering the system to the deployment of a new model
+- Answer questions like:
+  - How can I reproduce a specific model (currently in production or previously trained)?
+  - How can I compare experiments and choose the best model?
+  - etc.
+
 ## Additional resources
 
-Books
+This section lists a small selection of resources to get you started with MLOps.
+You can find an excellent practical guide to MLOps [here](https://mlops.swiss-ai-center.ch/).
+
+### Books
 
 - Introducing MLOps
 - Building Machine Learning Pipelines
@@ -27,10 +42,9 @@ Books
 |![img_19.png](img/img_19.png)|![img_20.png](img/img_20.png)|
 |---|---|
 
-Videos 
+### Videos 
 
 - [DVC/CML](https://www.youtube.com/@dvcorg8370/videos)
 - [Google](https://www.youtube.com/@googlecloudtech/videos)
 - [Databricks](https://www.youtube.com/@Databricks/videos)
 
-**Excellent practical guid to MLOps**: https://mlops.swiss-ai-center.ch/
