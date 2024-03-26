@@ -15,6 +15,7 @@ To achieve this, we need to go from simple jupyter notebooks into tools/scripts 
 Once this is node, we can automate the process (instead of relying on a complicated Readme).
 
 An example would be:
+
 - Data validation reads a data file and outputs a Markdown report
 - The data pre-processing step reads a json file and outputs a csv file ready for the model training
 - etc.
