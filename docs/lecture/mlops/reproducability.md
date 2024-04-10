@@ -11,12 +11,14 @@ Often those mistakes are not voluntary, but simply a combination of lack of time
 ![img_2.png](img/img_2.png)
 
 We distinguish two types of reproducability:
+
 - **Method**
   - The ability to rerun an experiment and get the same results
 - **Result**
   - The ability to apply a given method to a similar problem and get similar conclusions
 
 For machine learning experiments, we need:
+
 - The exact version of the code used
 - How it was run (compilation, dependencies, etc.)
 - All parameters

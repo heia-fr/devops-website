@@ -124,6 +124,12 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 **Travail Ecrit** (S. Rumley)
 
+
+## P9 : Jeudi 25.04 à 10h15
+
+- Présentation des approches MLOps par groupe (10 minutes + discussion)
+- Presentation simple, objectif principal discussion et partage de connaissances
+
 ## P2 - P12
 
 - Conception, implémentation incrémentale des propositions validées
