@@ -124,7 +124,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 **Travail Ecrit** (S. Rumley)
 
-## P2 - P11
+## P2 - P12
 
 - Conception, implémentation incrémentale des propositions validées
 - Les profs se réservent le droit de vous convoquer pour des
@@ -135,7 +135,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
     - Commits "propres" et réguliers
     - PVs, et journaux de travail à jour
 
-## P11
+## P12
 
 - Finalisation
 
@@ -143,9 +143,9 @@ fait partie du travail à réaliser au sein de chaque groupe.
     - Rapport final
     - Code final sur branche "main"
 
-## P12
+## P13
 
-- Défenses orales individuelles
+- Défenses orales individuelles: Le jeudi 23 mai de 9h à 12h30.
 - Feedback
 
 !!! note "Livrables"
