@@ -22,7 +22,7 @@ mkdocs-pages-j2-plugin = "^0.3.0"
 mkdocs-static-i18n = "^1.2.2"
 python-markdown-comments = { git = "https://github.com/ryneeverett/python-markdown-comments.git", rev = "973fe7b" }
 python-markdown-math = "^0.8"
-platformdirs = "^4.2.0"
+platformdirs = "^4.2.1"
 mkdocs-open-in-new-tab = "^1.0.3"
 
 [tool.poetry.dev-dependencies]
