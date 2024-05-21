@@ -17,4 +17,6 @@
 
 
 **Attentes**:
-Être capable d’expliquer ses contributions de manière approfondie et répondre à toute autre éventuelle question liée à la réalisation du travail de groupe.
+- Être capable d’expliquer ses contributions de manière approfondie et répondre à toute autre éventuelle question liée à la réalisation du travail de groupe.
+
+
