@@ -1,3 +1,7 @@
+---
+title: Défenses Orales Individuelles - Ordre de passage 
+---
+
 | Heure   | Étudiant                |
 |---------|-------------------------|
 | 09:00   | Biolley	Valentin        | 
