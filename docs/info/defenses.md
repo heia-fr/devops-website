@@ -1,4 +1,4 @@
-| Heure   | Étudiant        |
+| Heure   | Étudiant                |
 |---------|-------------------------|
 | 09:00   | Biolley	Valentin        | 
 | 09:15   | Gavillet Quentin        | 
@@ -14,7 +14,6 @@
 | 11:45   | Pause                   | 
 | 12:00   | Mihalcioiu	Daniel      | 
 | 12:15   | Marchon	Jérémy          | 
-
 
 ** Attentes **:
 être capable d’expliquer ses contributions de manière approfondie et répondre à toute autre éventuelle question liée à la réalisation du travail de groupe.
