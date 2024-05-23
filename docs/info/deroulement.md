@@ -30,7 +30,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 !!! note "Livrables"
     - Annonces des groupes formés (canal Teams)
-    - Fork du projet et accès aux profs en maintainer.
+    - Fork du projet et accès aux profs approprié.
 
 ## P2: Lundi
 
