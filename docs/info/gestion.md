@@ -8,7 +8,7 @@ title: Éléments clés de la gestion du projet
   **journal de travail (logbook)** dans le répertoire git du projet de
   son groupe. Des indications supplémentaires ainsi que le format à
   utiliser sont disponibles dans le fichier
-  [template](https://gitlab.forge.hefr.ch/ps4-2324/student-repo/-/blob/main/docs/logbooks/logbook_TEMPLATE.md?ref_type=heads)[^1].
+  [template](https://gitlab.forge.hefr.ch/ps4-2425/student-repo/-/blob/main/docs/logbooks/logbook_TEMPLATE.md?ref_type=heads)[^1].
   De plus, chaque individu est tenu de soumettre le code dont il est
   responsable. Loin de vouloir remettre les avantages du "pair
   programming" dans un contexte professionnel, n'est pas admis dans le

@@ -17,7 +17,7 @@ et des mises à jour de manière régulière.
 
 ## MS Teams
 
-Un espace MS Teams a été créé pour ce module. Voici le code pour y accéder : `59r1has`
+Un espace MS Teams a été créé pour ce module. Voici le code pour y accéder : `n0bptfr`
 
 Cet espace permettra aux professeurs de transmettre des informations concernant tous les groupes, et
 aux étudiants de poser des questions et d'échanger des informations durant et en dehors des heures du

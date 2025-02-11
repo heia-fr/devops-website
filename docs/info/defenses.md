@@ -4,20 +4,20 @@ title: Défenses Orales Individuelles - Ordre de passage
 
 | Heure   | Étudiant                |
 |---------|-------------------------|
-| 09:00   | Biolley	Valentin        | 
-| 09:15   | Gavillet Quentin        | 
-| 09:30   | Brenot Eden             |      
+| 09:00   | tbd.        | 
+| 09:15   | tbd.        | 
+| 09:30   | tbd.        |      
 | 09:45   | **Pause**               |
-| 10:00   | Grossenbacher Adam      |
-| 10:15   | Spat Jean-Marc          | 
-| 10:30   | Vonlanthen Brian        | 
+| 10:00   | tbd.      |
+| 10:15   | tbd.      | 
+| 10:30   | tbd.      | 
 | 10:45   | **Pause**               |  
-| 11:00   | Perroud	Erwan           | 
-| 11:15   | Montasell Masnou Xavier | 
-| 11:30   | Varenne	Hugo            | 
+| 11:00   | tbd.     | 
+| 11:15   | tbd.     | 
+| 11:30   | tbd.     | 
 | 11:45   | **Pause**               | 
-| 12:00   | Mihalcioiu	Daniel      | 
-| 12:15   | Marchon	Jérémy          | 
+| 12:00   | tbd.      | 
+| 12:15   | tbd.       | 
 
 
 **Attentes**:
