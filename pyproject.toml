@@ -6,7 +6,7 @@ authors = ["Jacques Supcik <jacques.supcik@hefr.ch>"]
 license = "Apache-2.0"
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.12"
+python = ">=3.10,<3.13"
 mkdocs = "^1.5.3"
 mkdocs-awesome-pages-plugin = "^2.9.2"
 mkdocs-calendar-plugin = "^0.4.0"
