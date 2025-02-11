@@ -6,9 +6,9 @@ copyright: "Copyright &copy; {{ cal.today.year }} Haute école d'ingénierie et 
 extra:
   show_page_revision_on_all_pages: false
   teacher_name: "Jacques Supcik"
-  year: "2023-2024"
+  year: "2024-2025"
   teams_name: DevOps - ID3
-  teams_code: mzb6ojm
+  teams_code: n0bptfr
   class_names:
     - ISC-ID-3
 
