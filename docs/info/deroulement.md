@@ -33,7 +33,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 ## P2: Mardi
 
-### Mardi 25.02 à 13h
+### Mardi 25.02 à 15h
 
 - Intégration et Déploiement continu CI/CD (J.Supcik)
 
