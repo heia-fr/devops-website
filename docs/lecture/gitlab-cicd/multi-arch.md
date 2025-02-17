@@ -149,31 +149,10 @@ pas la seule option et vous pouvez publier votre image dans d'autres registries 
 - AWS Container Registry
 - Google Container Registry
 
-Docker Hub est le plus populaire et nous allons y publier notre image. Si ce n'est pas déjà
-fait, créez un compte sur https://hub.docker.com/ et connectez-vous.
+Docker Hub est le plus populaire et nous allons y publier notre image.
+Précédement, vous avez déjà défini les variables `$DOCKERHUB_USER` et `$DOCKERHUB_TOKEN`
+et le _token_ que vous avez généré vous donne déjà les bonnes permissions pour publier.
 
-Cliquez sur votre _login name_ en haut à droite, puis sur _Account Settings_
-
-<figure markdown>
-![](img/dockerhub1.jpg)
-</figure>
-
-Dans la section _Security_, créez un nouvel _Access Token_ avec le _scope_ "Read, Write, Delete" et
-Notez-le quelque part.
-
-Retournez dans votre projet sur GitLab et dans la barre de gauche, choisissez _Settings_ --> _CI/CD_.
-Développez la section _Variables_ et créez les deux variables "DOCKERHUB_TOKEN" et "DOCKERHUB_USERNAME"
-
-<figure markdown>
-![](img/variables.jpg)
-</figure>
-
-"DOCKERHUB_TOKEN" est l'_Access Token_ que vous venez de créer et "DOCKERHUB_USERNAME" est
-votre _user name_ sur Docker Hub. Protégez le "DOCKERHUB_TOKEN" en cochant la case _Mask variable_
-
-!!! warning "Attention"
-    GitLab masque le contenu de la variable "DOCKERHUB_TOKEN" dans les logs, mais les administrateurs de
-    votre dépôt peuvent voir son contenu. Soyez-en conscient!
 
 Remplacez le contenu du fichier ".gitlab-ci.yml" par ceci :
 
@@ -191,7 +170,7 @@ variables:
 
 before_script:
   - docker info
-  - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_TOKEN
+  - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_TOKEN
 
 build:
   stage: build
