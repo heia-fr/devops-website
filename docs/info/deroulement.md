@@ -88,7 +88,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 ## P6 : Mardi
 
-### Mardi 25.03 à 9h
+### Mercredi 26.03 à 13h
 
 - MLOps (B. Wolf)
 
@@ -115,7 +115,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 **Travail Ecrit** (S. Rumley)
 
-## P9 : Mardi 15.04 à 9h
+## P9 : Mercredi 16.04 à 13h
 
 - Présentation des approches MLOps par groupe (10 minutes + discussion) (B. Wolf)
 - Presentation simple, objectif principal discussion et partage de connaissances
