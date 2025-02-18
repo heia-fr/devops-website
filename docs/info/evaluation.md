@@ -22,8 +22,8 @@ La note attribuée au projet de groupe tiendra essentiellement compte des critè
 - La qualité de la conception et la réalisation des idées validées.
 - L'évaluation du code source soumis (et le fonctionnement des différents modules et conformité aux attentes).
 - Au niveau des tests: 
-    - la qualité de la démarche de test. Plus précisément: la satisfaction de tous les tests requis (unitaires, intégration, UI automatisés, end-to-end, et tests manuels), la pertience des tests choisis, leur validation avec la prof, documentation, et réalisation. 
-    - explication des différents tests dans le README, les tests passent, facilité de lancer les outils, de tester, couverture des tests (oü trouver l'info).
+    - la qualité de la démarche de test. Plus précisément: la satisfaction de tous les tests requis (unitaires, intégration, UI automatisés, end-to-end, et tests manuels), la pertience des tests choisis, leur validation avec le prof, documentation, et réalisation. 
+    - explication des différents tests dans le README, les tests passent, facilité de lancer les outils, de tester, couverture des tests (où trouver l'info).
 - La qualité de la rédaction et du rapport final (obligatoirement en Latex) : ce rapport ne doit
   notamment pas être rédigé dans un ordre chronologique de réalisation (ce n'est pas un journal de
   bord !) mais structuré en fonction des différentes parties du projet.
@@ -32,4 +32,3 @@ La note attribuée au projet de groupe tiendra essentiellement compte des critè
     - Etat du repo (brain main) au rendu: pipeline, qualité du README, organisation du code, aspects de sécurité, messages d'erreur/warning lors de l'utilisation.
 				
 
-				
