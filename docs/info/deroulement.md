@@ -99,9 +99,9 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 ## P7 : Mardi
 
-### Mardi 01.04 à 9h
+### Mardi 01.04 à 15h
 
--  Testing: approches, types, et technologies (S. Fringeli / S. Ingram) 
+-  Testing: approches, types, et technologies (S. Fringeli) 
 
 !!! note "Livrables"
     - 3 à 4 propositions de tests cases **par écrit** à soumettre jusqu'au 28.03 
