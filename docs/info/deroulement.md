@@ -17,7 +17,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
     le professeur concerné par le rendu pour demander une validation des
     propositions, afin de pouvoir avancer.
 
-## P1 : Mardi / Mercredi / Jeudi
+## P1 : Mardi / Mercredi
 
 ### Mardi 18.02 à 15h00
 
@@ -43,25 +43,29 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 ## P3: Mardi
 
-### Mardi 04.03 à 9h
+### Mardi 04.03 - réserver de 9h30 à 16h
 
-- Exigences de qualité du code (S. Rumley)
+- Fin de la théorie du tooling
+- Robustesse du code
+- Philosophie du DevOps
+- Exigences de qualité du code
+
+On verra ce qu'on arrive à couvrir sans être trop crevés...
 
 !!! note "Livrables"
     - Annonces des groupes formés (canal Teams)
     - Fork du projet et accès aux profs approprié.
 
-- Robustesse du code (S. Rumley)
 
 !!! note "Livrable"
-    - Pour le 15 mars : 
+    - Pour le 18 mars : 
         - Intégration initiale de SonarQube dans le projet
         - Rapport d'analyse de l'application. Quelles sont vos recommandations, niveau qualité du code, hygiène, etc ?
     - en fin de projet : SonarQube est utilisé pour monitorer la qualité des parties principales du code
 
 - Philosophie DevOps (S. Rumley)
 
-## P4 : Mardi
+## P4 : Mardi/Jeudi
 
 ### Mardi 11.03 à 9h
 
@@ -75,18 +79,23 @@ fait partie du travail à réaliser au sein de chaque groupe.
     - Small Threat Model of the SooZ App
     - Pipeline qui exécute un DAST
 
-## P5 : Mardi
+### Jeudi 13.03 à 8h45 --> 10h30
 
-### Mardi 18.03 à 9h
-
-- "Testing Theory" (S. Rumley)
+- Théorie des tests (S.Rumley)
 
 !!! note "Livrables"
-    - En fin de projet : il est possible de lancer des tests, la CI lance
-      des tests, la couverture des tests est mesurée. SonarQube monitore
-      cette couverture.
+- En fin de projet : il est possible de lancer des tests, la CI lance
+des tests, la couverture des tests est mesurée. SonarQube monitore
+cette couverture.
 
-## P6 : Mardi
+
+## P5 : Jeudi
+
+### Jeudi 30.03 à 8h45 --> 10h30
+
+- Date de réserve
+
+## P6 : Mercredi
 
 ### Mercredi 26.03 à 13h
 
@@ -105,13 +114,13 @@ fait partie du travail à réaliser au sein de chaque groupe.
 
 !!! note "Livrables"
     - 3 à 4 propositions de tests cases **par écrit** à soumettre jusqu'au 28.03 
-    - Chaque groupe prend contact avec la prof. pour discuter via Teams ou à distance (avant jeudi) de la proposition, en envoyant au préalable le document.
+    - Chaque groupe prend contact avec le prof. pour discuter via Teams ou à distance (avant jeudi) de la proposition, en envoyant au préalable le document.
     - Technologies de test: Cypress (pour les tests UI automatisés), qui intègre [Sinon.js](https://docs.cypress.io/api/utilities/sinon) pour les doublons de tests et [Chai](https://docs.cypress.io/guides/references/assertions) pour les "assertions".
     - Dans la mesure du possible, tenter de spécifier de quels types de tests il s'agit (unitaires, d'intégration, tests end to end) et le type de doublons, quitte à le revisiter, le justifier, et le finaliser pour le rapport final.
     - Ne pas hésiter à mettre dans le draft de tests cases soumis, tout vos questionnements et doutes liés aux types de test etc.
     - Implémentation des tests (entre P2 et P11).
 
-## P8 : Mardi 08.04 à 9h
+## P8 : Mardi 08.04 à 10h15
 
 **Travail Ecrit** (S. Rumley)
 
