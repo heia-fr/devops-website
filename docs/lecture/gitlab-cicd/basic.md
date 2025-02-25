@@ -1,7 +1,7 @@
 ---
 title: Création d'une image Docker
-go_major_version: 1.23
-go_version: 1.23.6
+go_major_version: 1.24
+go_version: 1.24.0
 alpine_version: 3.21
 docker_version: 27.5
 ---
