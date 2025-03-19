@@ -91,7 +91,7 @@ cette couverture.
 
 ## P5 : Jeudi
 
-### Jeudi 30.03 à 8h45 --> 10h30
+### Jeudi 20.03 à 8h45 --> 10h30
 
 - Date de réserve
 
