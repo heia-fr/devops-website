@@ -113,7 +113,7 @@ cette couverture.
 -  Testing: approches, types, et technologies (S. Fringeli) 
 
 !!! note "Livrables"
-    - 3 à 4 propositions de tests cases **par écrit** à soumettre jusqu'au 28.03 
+    - 3 à 4 propositions de tests cases **par écrit** à soumettre jusqu'au **6 avril**
     - Chaque groupe prend contact avec le prof. pour discuter via Teams ou à distance (avant jeudi) de la proposition, en envoyant au préalable le document.
     - Technologies de test: Cypress (pour les tests UI automatisés), qui intègre [Sinon.js](https://docs.cypress.io/api/utilities/sinon) pour les doublons de tests et [Chai](https://docs.cypress.io/guides/references/assertions) pour les "assertions".
     - Dans la mesure du possible, tenter de spécifier de quels types de tests il s'agit (unitaires, d'intégration, tests end to end) et le type de doublons, quitte à le revisiter, le justifier, et le finaliser pour le rapport final.
