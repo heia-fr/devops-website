@@ -101,16 +101,15 @@ cette couverture.
 
 - MLOps (B. Wolf)
 
-!!! note "Livrables"
-    - Proposition aspect "Machine learning"
-    - Structure générale MLOps.
-    - Propositions MLOps
-
 ## P7 : Mardi
 
 ### Mardi 01.04 à 15h
 
 -  Testing: approches, types, et technologies (S. Fringeli) 
+
+!!! note "Livrables"
+- Petit document avec une proposition d'integration de "Machine learning".
+- Ceci inclus la structure générale/architecture de la partie MLOps du projet.
 
 !!! note "Livrables"
     - 3 à 4 propositions de tests cases **par écrit** à soumettre jusqu'au **6 avril**
