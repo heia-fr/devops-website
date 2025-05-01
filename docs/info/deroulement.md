@@ -141,16 +141,9 @@ cette couverture.
 
 ## P12
 
-- Finalisation
-
-!!! note "Livrables"
-    - Rapport final
-    - Code final sur branche "main"
-
-## P13
-
-- Défenses orales individuelles: *date to be defined*
+- Défenses orales individuelles: **mardi après-midi 13 mai 2025**
 - Feedback
 
 !!! note "Livrables"
-    - Évaluation du module
+    - Rapport final - doit être rendu au plus tard le **12 mai 2025 à 23h59**
+    - Code final sur branche "main"
