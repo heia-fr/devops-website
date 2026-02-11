@@ -121,5 +121,5 @@ On verra ce qu'on arrive à couvrir sans être trop crevés...
 - Feedback
 
 !!! note "Livrables"
-    - Rapport final - doit être rendu au plus tard le **mardi 15 mai 2025 à 23h59**
+    - Rapport final - doit être rendu au plus tard le **mardi 15 mai 2026 à 23h59**
     - Code final sur branche "main"
