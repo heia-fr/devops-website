@@ -13,9 +13,7 @@ Nous visons dans le module "Méthodologie DevOps" les objectifs suivants :
 - Concevoir et implémenter un modèle basé sur des données non statiques et pouvoir le déployer avec une intégration dans une application existante.
 - Mettre en place et expliquer les outils et procédures permettant la reproductibilité, la documentation et la comparaison des expériences et opérations nécessaires à la mise au point d'un modèle basé sur des données.
 - Maitriser les outils de déploiement de modèles basés sur les données, permettant de respecter les bonnes pratiques DevOps, notamment en termes d'automatisation, de validation et de tests.
-- Au niveau de la gestion de projet et le travail de groupe : pratiquer la répartition des tâches
-  de programmation et leurs intégrations en respectant les échéances, coordonner le travail, et le
-  documenter
+- Au niveau de la gestion de projet et le travail de groupe : pratiquer la répartition des tâches de programmation et leurs intégrations en respectant les échéances, coordonner le travail, et le documenter.
 
 <!--
 - exploiter les notions théoriques et pratiques acquises durant la formation et le module lui-même,
