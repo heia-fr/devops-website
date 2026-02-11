@@ -11,12 +11,10 @@ groupe. En effet, l'élaboration d'un planning de développement détaillé
 fait partie du travail à réaliser au sein de chaque groupe.
 
 !!! warning "Attention"
-    - Les délais des livrables sont fixés à la **fin de la dernière semaine**
-    précisée (le dernier commit réalisé avant minuit sur la branche principale, le dimanche de la semaine en question, fait foi). 
-    - Pour chaque soumission, le prof concerné doit être **notifié** dans le canal Teams du groupe (avec un tag)
-    - Il revient au groupe de solliciter
-    le professeur concerné par le rendu pour demander une validation des
-    propositions, afin de pouvoir avancer.
+    - Les délais des livrables sont fixés au **mercredi précédent le prochain cours avec le prof responsable du livrable, à 18h**.
+    précisée 
+    - A chaque soumission, il faut **notifier** le ou la prof. concerné(e) dans le canal Teams du groupe (avec un tag). Le dernier commit réalisé avant le délai sur la branche principale fera foi. 
+    - Il revient au groupe de solliciter les professeurs concernés par le rendu pour demander une validation des propositions, afin de pouvoir avancer.
 
 ## P1 : Mardi / Jeudi
 
@@ -24,7 +22,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
 - Introduction au projet SpotOn, installations (Eden Brenot)
 
 ### Jeudi 19.02 à 9h05
-- Organisation du cours, but du projet 
+- Organisation du cours, but du projet (tous les profs.)
 
 !!! note "Livrables"
     - Annonces des groupes formés (création des canaux Teams)/
@@ -39,7 +37,7 @@ fait partie du travail à réaliser au sein de chaque groupe.
     - **En fin de projet**: configuration CI/CD pour GitLab (ou GitHub Actions)
 
 ## P3: Mardi
-### Mardi 04.03 à 8h15
+### Mardi 03.03 à 8h15
 - DevOps and DevOps Advanced, c'est quoi ?
 - Tooling (S. Rumley)
 
