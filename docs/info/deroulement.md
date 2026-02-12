@@ -11,7 +11,7 @@ groupe. En effet, l'élaboration d'un planning de développement détaillé
 fait partie du travail à réaliser au sein de chaque groupe.
 
 !!! warning "Attention"
-    - Les délais des livrables sont fixés au **mercredi précédent le prochain cours avec le prof responsable du livrable, à 18h**.
+    - **Par défaut**, les délais des livrables sont fixés au **mercredi précédent le prochain cours avec le (ou la) prof responsable du livrable, à 18h**.
     - A chaque soumission, il faut **notifier** le ou la prof. concerné(e) dans le canal Teams du groupe (avec un tag). Le dernier commit réalisé avant le délai sur la branche principale fera foi. 
     - Il revient au groupe de solliciter les professeurs concernés par le rendu pour demander une validation des propositions, afin de pouvoir avancer.
 
