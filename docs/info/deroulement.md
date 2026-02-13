@@ -116,9 +116,9 @@ On verra ce qu'on arrive à couvrir sans être trop crevés...
     - PVs, et journaux de travail à jour
 
 ## P12
-- Défenses orales individuelles: **jeudi 17 mai 2025 dés 9h05**
+- Défenses orales individuelles: **jeudi 21 mai 2026 dés 9h05**
 - Feedback
 
 !!! note "Livrables"
-    - Rapport final - doit être rendu au plus tard le **mardi 15 mai 2026 à 23h59**
-    - Code final sur branche "main"
+    - Rapport final - doit être rendu au plus tard le **dimanche 17 mai 2026 à 23h59**
+    - Code final sur branche "main" en même temps
