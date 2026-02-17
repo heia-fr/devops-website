@@ -98,12 +98,11 @@ On verra ce qu'on arrive à couvrir sans être trop crevés...
 - Revue des propositions CI/CD (J. Supcik)
 
 ## P9 : Jeudi 
-### Jeudi 23.04 à 9h05
-- Présentation des tests proposés par chaque groupe (S. Ingram)
-
-## P10 : Jeudi 30.04 à 10h15
+### Mardi 21.04 à 10h15
 - Présentation des approches MLOps par groupe (10 minutes + discussion) (B. Wolf)
 - Presentation simple, objectif principal discussion et partage de connaissances
+### Jeudi 23.04 à 9h05
+- Présentation des tests proposés par chaque groupe (S. Ingram)
 
 ## P2 - P12
 - Conception, implémentation incrémentale des propositions validées
