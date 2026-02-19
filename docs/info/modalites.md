@@ -6,8 +6,9 @@ title: Organisation du module
 
 Le nombre de crédits ECTS attribué à ce module est de 5. Comme le module sera donné sur 12 semaines uniquement, il faut compter 6 à 7 heures hebdomadaires sur 12 semaines, sans oublier les heures de travail personnel correspondantes à 5 crédits.
 Durant les premières semaines, une série de cours autour de la thématique DevOps:
-   - Les cours dispensés porteront sur les fondements du DevOps, couvriront des aspects pratiques et serviront d'appui au projet.
-   - Durant ces cours d'appui, nous vous préciserons également les différents aspects requis et surlesquels l'évaluation du projet protera.
+
+- Les cours dispensés porteront sur les fondements du DevOps, couvriront des aspects pratiques et serviront d'appui au projet.
+- Durant ces cours d'appui, nous vous préciserons également les différents aspects requis et surlesquels l'évaluation du projet protera.
 
 **Contenu des cours**:
 
