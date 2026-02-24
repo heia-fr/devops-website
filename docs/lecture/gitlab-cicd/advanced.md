@@ -11,12 +11,12 @@ plutôt simple.
 Dans la pratique, le fichier ".gitlab-ci.yaml" est beaucoup plus
 long et le _workflow_ plus complexe. Il y aura plusieurs phases
 ([stages](https://docs.gitlab.com/ee/ci/yaml/index.html#stages)) et dans
-chaque phase il y aura plusieurs tâches
+chaque phase, il y aura plusieurs tâches
 ([jobs](https://docs.gitlab.com/ee/ci/yaml/index.html#job-keywords))
 Certaines tâches se feront dans des conditions données
 ([only/except](https://docs.gitlab.com/ee/ci/yaml/index.html#only--except)
 et [rules](https://docs.gitlab.com/ee/ci/yaml/index.html#rules)). Par
-exemple, on ne fera pas la même chose si il y a un nouveau tag dans le
+exemple, on ne fera pas la même chose s’il y a un nouveau tag dans le
 dépôt git, si le CI/CD est lancé suite à un _merge request_ ou si on
 fait un _commit_ dans la branche _main_.
 
@@ -26,19 +26,19 @@ pour vous en faire une idée. Et si ça vous semble peu, regardez les
 dernières lignes qui importent le contenu du répertoire.
 [`.gitlab/ci`](https://gitlab.com/gitlab-org/gitlab/-/tree/master/.gitlab/ci)
 
-Etudiez aussi l'utilisation du mot clé
+Étudiez aussi l'utilisation du mot clé
 [`extend`](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#use-extends-to-reuse-configuration-sections)
 pour simplifier des configurations complexes.
 
-Pour maîtriser le CI/CD de GitLab, il est important que cous compreniez
+Pour maîtriser le CI/CD de GitLab, il est important que vous compreniez
 le concept
-d'[artifact](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
+d'[artefact](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
 et que vous sachiez utiliser les
 [caches](https://docs.gitlab.com/ee/ci/caching/) efficacement.
 Lisez le chapitre sur les [releases](https://docs.gitlab.com/ee/user/project/releases/)
 de GitLab (principalement la [partie qui explique comment produire une _release_
 depuis le CI/CD](https://docs.gitlab.com/ee/user/project/releases/#creating-a-release-by-using-a-cicd-job)) pour apprendre comment publier
-un _artifact_ sur GitLab.
+un _artefact_ sur GitLab.
 
 ## Déploiement sans interruption de service
 
@@ -66,7 +66,7 @@ le CI/CD de GitLab efficacement :
 ## Votre propre Runner
 
 Les _runners_ partagés dans le réseau de l'école sont dans un cluster
-Kubernetes et permettent de faire la plupart des choses, mais parfois
+Kubernetes et permettent de faire la plupart des choses, mais parfois,
 vous avez besoin de votre propre runner. C'est principalement dans les
 cas suivants :
 
@@ -94,7 +94,7 @@ docker run -d --name gitlab-runner --restart always \
     gitlab/gitlab-runner:latest
 ```
 
-Dans votre groupe allez dans "CI/CD" --> "Runners" et 
+Dans votre groupe, allez dans "CI/CD" --> "Runners" et 
 cliquez sur "Register a group runner". Vous obtiendrez
 un "Registration token".
 

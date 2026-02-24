@@ -1,5 +1,6 @@
 ---
 title: Image multi-architectures
+go_version: 1.25.0
 ---
 
 ![](img/arm.webp)
@@ -17,54 +18,57 @@ faire tourner des images Docker faites pour _amd64_ grâce à un
 Nous allons donc modifier notre projet pour que le _runner_ produise
 également une image ARM.
 
-Modifiez le fichier ".gitlab-ci.yml" avec ce contenu:
+Modifiez le fichier ".gitlab-ci.yml" en y ajoutant la ligne 35 avec l'option `--opt platform=linux/amd64,linux/arm64` :
 
-``` yaml title=".gitlab-ci.yml"
-image: docker:25.0
-
-services:
-  - docker:25.0-dind
-
-variables:
-  IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
-  DOCKER_CLI_EXPERIMENTAL: enabled
-
-before_script:
-  - docker info
-  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-
-build:
+``` yaml title=".gitlab-ci.yml" linenums="1" hl_lines="35"
+build-multiarch-docker-image:
+  image:
+    name: moby/buildkit:rootless
+    entrypoint: [""]
   stage: build
+  variables:
+    BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
+    DOCKER_CONFIG: "$CI_PROJECT_DIR/.docker"
+    CACHE_IMAGE: $CI_REGISTRY_IMAGE:cache
+    IMAGE_TAG_SHA: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
+  before_script:
+    - mkdir -p "$DOCKER_CONFIG"
+    - |
+      echo "{
+        \"auths\": {
+          \"${CI_REGISTRY}\": {
+            \"auth\": \"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"
+          },
+          \"https://index.docker.io/v1/\": {
+            \"auth\": \"$(printf "%s:%s" "${DOCKER_HUB_USER}" "${DOCKER_HUB_PASSWORD}" | base64 | tr -d '\n')\"
+          }
+        }
+      }" > "$DOCKER_CONFIG/config.json"
   script:
-    - docker buildx ls
-    # Build tagged images for various architectures
-    - docker buildx build --push --platform linux/amd64  --tag "${IMAGE_TAG_SLUG}-amd64" .
-    - docker buildx build --push --platform linux/arm64  --tag "${IMAGE_TAG_SLUG}-arm64" .
-    - docker buildx build --push --platform linux/arm/v7 --tag "${IMAGE_TAG_SLUG}-armv7" .
-    - docker manifest create ${IMAGE_TAG_SLUG} "${IMAGE_TAG_SLUG}-amd64" "${IMAGE_TAG_SLUG}-arm64" "${IMAGE_TAG_SLUG}-armv7"
-    - docker manifest push ${IMAGE_TAG_SLUG}
-    # Build latest images for various architectures
-    - docker buildx build --push --platform linux/amd64  --tag "${IMAGE_TAG_LATEST}-amd64" .
-    - docker buildx build --push --platform linux/arm64  --tag "${IMAGE_TAG_LATEST}-arm64" .
-    - docker buildx build --push --platform linux/arm/v7 --tag "${IMAGE_TAG_LATEST}-armv7" .
-    - docker manifest create ${IMAGE_TAG_LATEST} "${IMAGE_TAG_LATEST}-amd64" "${IMAGE_TAG_LATEST}-arm64" "${IMAGE_TAG_LATEST}-armv7"
-    - docker manifest push ${IMAGE_TAG_LATEST}
+    - |
+      # Use git tag if available, otherwise use branch name (preserves dots in tags)
+      TAG_NAME=${CI_COMMIT_TAG:-$CI_COMMIT_REF_NAME}
+      buildctl-daemonless.sh build \
+        --frontend dockerfile.v0 \
+        --local context=. \
+        --local dockerfile=. \
+        --export-cache type=registry,ref=$CACHE_IMAGE \
+        --import-cache type=registry,ref=$CACHE_IMAGE \
+        --opt platform=linux/amd64,linux/arm64 \
+        --output type=image,\"name=$IMAGE_TAG_SHA,$IMAGE_TAG_LATEST,$CI_REGISTRY_IMAGE:$TAG_NAME\",push=true
+
 ```
 
-Faites un _commit_ puis in _push_ et observez le résultat dans l'interface web de GitHub. Notez que le _runner_
+Faites un _commit_ puis in _push_ et observez le résultat du _pipeline_dans l'interface web de GitHub. Notez que le _runner_
 prend plus de temps pour construire les images, car maintenant c'est lui qui doit émuler le processeur ARM.
-Après environ 3 minutes le résultat devrait être disponible et vous devriez avoir 4 les 4 _tags_ suivants :
-
-<figure markdown>
-![](img/cicd2.jpg)
-</figure>
+Après environ 3 minutes le résultat devrait être disponible dans le _registry_ de GitLab.
 
 Téléchargez la nouvelle image et refaites un essai :
 
 ``` bash
-docker pull registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>
-docker run --rm registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>
+docker pull registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>:latest
+docker run --rm registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>:latest
 ```
 
 et si vous avez une machine avec un processeur ARM, vous verrez la bonne
@@ -72,71 +76,56 @@ architecture et pas de message de type _warning_ :
 
 ``` text
 Hello DevOps!
-Go version: go1.20.1
+Go version: go{{ go_version}}
 Architecture: arm64
 OS: linux
 ```
 
-## Une seule image "multi-architecture"
+Si votre machine est capable de faire tourner des images pour les deux architectures, vous pouvez aussi faire tourner l'image pour les deux architectures et observer le résultat :
 
-Dans la section précédente, nous avons construit une image _multi-architectures_
-à l'aide de plusieurs images et d'un _manifest_ et c'est la méthode recommandée
-pour travailler avec le _registry_ de GitLab. Mais avec un docker récent, nous
-pouvons directement faire une image multi-architectures.
-
-Pour garder une version fonctionnelle sur Gitlab, faites maintenant un nouveau 
-projet avec les fichiers "Dockerfile", "go.mod" et "hello-devops.go" et
-déployez ce projet sur Gitlab.
-
-Ajoutez le fichier ".gitlab-ci.yml" suivant:
-
-``` yaml title=".gitlab-ci.yml"
-image: docker:25.0
-
-services:
-  - docker:25.0-dind
-
-variables:
-  IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
-  DOCKER_CLI_EXPERIMENTAL: enabled
-
-before_script:
-  - docker info
-  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-
-build:
-  stage: build
-  script:
-    - docker context create devops-context
-    - docker context ls
-    - docker buildx create --name mutliarch-builder --use devops-context
-    - docker buildx ls
-    - docker buildx inspect mutliarch-builder --bootstrap
-    - >
-      docker buildx build
-      --platform linux/amd64,linux/arm64,linux/arm/v7
-      --tag $IMAGE_TAG_SLUG
-      --tag $IMAGE_TAG_LATEST
-      --provenance false
-      --push .
+``` bash
+docker run --platform=linux/amd64 --rm registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>:latest
+docker run --platform=linux/arm64 --rm registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>:latest
 ```
 
-Après avoir syncronisé votre dépôt, le CI/CD construira l'image multi-architectures et la publiera
-dans le _registry_ de GitLab (Deploy --> Container Registry). Mais l'interface web de
-GitLab n'affiche pas les détail des architectures :
-
-<figure markdown>
-![](img/cicd3.png)
-</figure>
-
-Par contre l'image fonctionne très bien et vous pouvez l'utiliser comme dans la section précédente.
-
-Il y a actuellement un [epic](https://gitlab.com/groups/gitlab-org/-/epics/11952) ouvert pour améliorer l'interface web de GitLab pour les images multi-architectures :
+Notez que l'interface web de Gitlab ne montre pas les différentes architectures disponibles pour une image.
+Il y a actuellement un [epic](https://gitlab.com/groups/gitlab-org/-/epics/11952) ouvert pour addresser ce problème:
 
 <figure markdown>
 ![](img/epic-11952.png)
 </figure>
+
+En attendant, vous pouvez vérifier les différentes architectures disponibles pour une image avec la commande suivante :
+
+
+``` bash
+docker manifest inspect <NAMESPACE>/<REPOSITORY>:latest
+```
+
+Vous devriez obtenir quelque chose comme ça :
+
+``` json
+{
+   "schemaVersion": 2,
+   ...
+   "manifests": [
+      {
+         ...
+         "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+         }
+      },
+      {
+         ...
+         "platform": {
+            "architecture": "arm64",
+            "os": "linux"
+         }
+      }
+   ]
+}
+```
 
 ## Publication de l'image dans le DockerHub
 
@@ -150,45 +139,45 @@ pas la seule option et vous pouvez publier votre image dans d'autres registries 
 - Google Container Registry
 
 Docker Hub est le plus populaire et nous allons y publier notre image.
-Précédement, vous avez déjà défini les variables `$DOCKERHUB_USER` et `$DOCKERHUB_TOKEN`
+Précédement, vous avez déjà défini les variables `$DOCKER_HUB_USER` et `$DOCKER_HUB_TOKEN`
 et le _token_ que vous avez généré vous donne déjà les bonnes permissions pour publier.
 
 
 Remplacez le contenu du fichier ".gitlab-ci.yml" par ceci :
 
 ```yaml title=".gitlab-ci.yml"
-image: docker:25.0
-
-services:
-  - docker:25.0-dind
-
-variables:
-  DOCKERHUB_PROJECT: devops
-  IMAGE_TAG_SLUG: ${DOCKERHUB_USERNAME}/${DOCKERHUB_PROJECT}:${CI_COMMIT_REF_SLUG}
-  IMAGE_TAG_LATEST: ${DOCKERHUB_USERNAME}/${DOCKERHUB_PROJECT}:latest
-  DOCKER_CLI_EXPERIMENTAL: enabled
-
-before_script:
-  - docker info
-  - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_TOKEN
-
-build:
+build-docker-image-to-dockerhub:
+  image:
+    name: moby/buildkit:rootless
+    entrypoint: [""]
   stage: build
+  variables:
+    DOCKER_HUB_PROJECT: "devops"
+    BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
+    DOCKER_CONFIG: "$CI_PROJECT_DIR/.docker"
+    IMAGE_NAME: ${DOCKER_HUB_USER}/${DOCKER_HUB_PROJECT}
+    CACHE_IMAGE: ${IMAGE_NAME}:cache
+    IMAGE_TAG_SHA: ${IMAGE_NAME}:$CI_COMMIT_SHA
+    IMAGE_TAG_LATEST: ${IMAGE_NAME}:latest
+  before_script:
+    - mkdir -p "$DOCKER_CONFIG"
+    # BuildKit expects Docker Hub auth under the index.docker.io/v1 key.
+    - echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"username\":\"$DOCKER_HUB_USER\",\"password\":\"$DOCKER_HUB_PASSWORD\"}}}" > "$DOCKER_CONFIG/config.json"
+
   script:
-    - docker context create devops-context
-    - docker context ls
-    - docker buildx create --name mutliarch-builder --use devops-context
-    - docker buildx ls
-    - docker buildx inspect mutliarch-builder --bootstrap
-    - >
-      docker buildx build
-      --platform linux/amd64,linux/arm64,linux/arm/v7
-      --tag $IMAGE_TAG_SLUG
-      --tag $IMAGE_TAG_LATEST
-      --push .
+    - |
+      TAG_NAME=${CI_COMMIT_TAG:-$CI_COMMIT_REF_NAME}
+      buildctl-daemonless.sh build \
+        --frontend dockerfile.v0 \
+        --local context=. \
+        --local dockerfile=. \
+        --export-cache type=registry,ref=$CACHE_IMAGE \
+        --import-cache type=registry,ref=$CACHE_IMAGE \
+        --opt platform=linux/amd64,linux/arm64 \
+        --output type=image,\"name=$IMAGE_TAG_SHA,$IMAGE_TAG_LATEST,${IMAGE_NAME}:$TAG_NAME\",push=true
 ```
 
-Remplacez la variable `DOCKERHUB_PROJECT` par le nom de votre repository sur Docker Hub et mettez à
+Remplacez la variable `DOCKER_HUB_PROJECT` par le nom de votre repository sur Docker Hub et mettez à
 jour le dépôt sur GitLab.
 
 Dès que le _runner_ aura fait son travail, vous devriez avoir l'image multi-architectures dans votre compte
@@ -202,5 +191,5 @@ L'image sur mon compte Docker Hub est publique et vous pouvez l'essayer sans aut
 avec la commande suivante :
 
 ``` bash
-docker run --rm supcik/devops
+docker run --rm supcik/devops:latest
 ```

@@ -9,7 +9,7 @@ pour mettre en pratique le CI/CD. Nous avons aussi vu les limites, surtout
 pour la création d'images multi-architectures.
 
 Pour les exercices de ce chapitre, nous avons utilisé les _runners_ (les
-machines qui fait tourner les tâches du CI/CD) de l'école. Gitlab - tout
+machines qui font tourner les tâches du CI/CD) de l'école. Gitlab - tout
 comme Github - vous permet de créer vos propres _runners_ et de les
 utiliser pour vos projets. C'est une option intéressante si vous avez
 besoin de plus de puissance de calcul ou si vous avez des besoins

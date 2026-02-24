@@ -1,8 +1,8 @@
 ---
 title: Création d'une image Docker
-go_major_version: 1.24
-go_version: 1.24.0
-alpine_version: 3.21
+go_major_version: 1.25
+go_version: 1.25.0
+alpine_version: 3.23
 docker_version: 27.5
 ---
 
@@ -151,43 +151,49 @@ et laisser les ordinateurs du _cloud_ faire le travail.
 Ajoutez le fichier ".gitlab-ci.yml" à votre dossier :
 
 ``` yaml title=".gitlab-ci.yml" linenums="1"
-image: docker:{{ docker_version }}
-
-services:
-  - docker:{{ docker_version }}-dind
-
-variables:
-  IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
-
-before_script:
-  - docker info
-  - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_TOKEN
-
-build:
+build-docker-image:
+  image:
+    name: moby/buildkit:rootless
+    entrypoint: [""]
   stage: build
+  variables:
+    BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
+    DOCKER_CONFIG: "$CI_PROJECT_DIR/.docker"
+    CACHE_IMAGE: $CI_REGISTRY_IMAGE:cache
+    IMAGE_TAG_SHA: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
+  before_script:
+    - mkdir -p "$DOCKER_CONFIG"
+    - |
+      echo "{
+        \"auths\": {
+          \"${CI_REGISTRY}\": {
+            \"auth\": \"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"
+          },
+          \"https://index.docker.io/v1/\": {
+            \"auth\": \"$(printf "%s:%s" "${DOCKER_HUB_USER}" "${DOCKER_HUB_PASSWORD}" | base64 | tr -d '\n')\"
+          }
+        }
+      }" > "$DOCKER_CONFIG/config.json"
   script:
-    - docker build -t $IMAGE_TAG_LATEST .
-    - docker tag $IMAGE_TAG_LATEST $IMAGE_TAG_SLUG
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker push $IMAGE_TAG_SLUG
-    - docker push $IMAGE_TAG_LATEST
+    - |
+      # Use git tag if available, otherwise use branch name (preserves dots in tags)
+      TAG_NAME=${CI_COMMIT_TAG:-$CI_COMMIT_REF_NAME}
+      buildctl-daemonless.sh build \
+        --frontend dockerfile.v0 \
+        --local context=. \
+        --local dockerfile=. \
+        --export-cache type=registry,ref=$CACHE_IMAGE \
+        --import-cache type=registry,ref=$CACHE_IMAGE \
+        --output type=image,\"name=$IMAGE_TAG_SHA,$IMAGE_TAG_LATEST,$CI_REGISTRY_IMAGE:$TAG_NAME\",push=true
+
 ```
 
 !!! note "Note"
-    le service `docker:{{ docker_version }}-dind` (dind = Docker-in-Docker) permet de faire
-    tourner du Docker dans du Docker.
+    La création d'image Docker à l'intérieur d'un container Docker est un processus un peu compliqué, et le fichier `.gitlab-ci.yml` ci-dessus décrit la manière recommandée de le faire dans GitLab CI/CD. Il existe cependant d'autres méthodes, comme l'utilisation de "Docker in Docker" (DinD), de "Buildah" ou de "Kaniko", mais la méthode décrite ci-dessus est plus rapide et plus facile à mettre en place.
 
-    Le Service Informatique recommandait l'utilisation de [Kaniko](https://docs.gitlab.com/ee/ci/docker/using_kaniko.html)
-    pour la création d'image Docker. Cependant, Kaniko n'est pas encore capable
-    de faire des images multi-architectures et c'est pourquoi nous ne l'utilisons
-    pas ici. La [documentation](https://docs.gitlab.com/ee/ci/docker/using_kaniko.html#build-a-multi-arch-image)
-    fait mention d'un "manifest-tool" pour construire les images multi-architectures, mais
-    je trouve que c'est un peu compliqué et je préfère la méthode que je vais vous
-    montrer dans le chapitre suivant.
-
-Avec ce fichier, vous indiquez à GitLab ce qu'il doit faire quand une nouvelle
-version est _poussée_ (push) dans le dépôt.
+Avec ce fichier, vous indiquez à GitLab qu'il doit construire une image Docker à chaque fois qu'une nouvelle
+version est _poussée_ (push) dans le dépôt. L'image Docker construite est ensuite publiée dans le "registry" de GitLab, et vous pourrez la télécharger et l'exécuter sur votre machine.
 
 Si ce n'est pas déjà fait, créez un dépôt dans le GitLab de l'école et mettez-y
 tous les fichiers que vous venez de créer.
@@ -211,18 +217,17 @@ Dans la section _Personal access tokens_, créez un nouvel _Access Token_ avec l
     Je vous recommande donc de choisir ce _scope_ dès le début, mais d'un point de vue de la sécurité, il est préférable de
     choisir le _scope_ le plus bas possible.
 
-A la ligne 12 du fichier `.gitlab-ci.yml`, ci-dessus, les deux variables d'environnement `$DOCKERHUB_USER` et `$DOCKERHUB_TOKEN`.
+A la ligne 20 du fichier `.gitlab-ci.yml`, ci-dessus, les deux variables d'environnement `$DOCKER_HUB_USER` et `$DOCKER_HUB_TOKEN`.
 doivent contenir le _user name_ et l'_Access Token_ que vous venez de créer. Définissez ces variables dans votre projet GitLab :
 
 Allez dans
 "Settings" --> "CI/CD" --> "Variables" et ajoutez ces deux variables. Pour plus de sécurité, protégez le contenu de ces
-variables en cochant la case _Masked and hidden_. Notez que pour `$DOCKERHUB_USER`, vous pouvez vous contenter de protéger cette variable
+variables en cochant la case _Masked and hidden_. Notez que pour `$DOCKER_HUB_USER`, vous pouvez vous contenter de protéger cette variable
 avec l'option _Masked_.
 
 <figure markdown>
 ![](img/cicd_var.png)
 </figure>
-
 
 Après avoir synchronisé votre dépôt (avec `git push`), vous devriez voir une nouvelle
 entrée dans la section "CI/CD" --> "Pipelines" :
@@ -240,7 +245,7 @@ Vous devriez aussi avoir une entrée dans "Deploy" --> "Container registry".
 Vous pouvez télécharger et exécuter cette image avec la commande :
 
 ``` bash
-docker run --rm registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>
+docker run --rm registry.forge.hefr.ch/<NAMESPACE>/<REPOSITORY>:latest
 ```
 
 !!! info "Info"
@@ -270,3 +275,12 @@ WARNING: The requested image's platform (linux/amd64) does not match
 the detected host platform (linux/arm64/v8) and no specific platform
 was requested
 ```
+
+!!! note "Note"
+    Notez l'utilisation du tag `cache` dans le fichier `.gitlab-ci.yml`. Ce tag permet d'améliorer
+    les performances du processus de construction de l'image Docker en utilisant un cache partagé
+    entre les différentes exécutions du pipeline.
+    
+    De manière générale, l'utilisation d'un cache est une bonne pratique pour améliorer les performances du CI/CD.
+    Lisez la documentation de GitLab sur le [cache](https://docs.gitlab.com/ci/caching/) pour en savoir plus sur les
+    différentes options disponibles.
