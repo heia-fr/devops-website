@@ -217,7 +217,7 @@ Dans la section _Personal access tokens_, créez un nouvel _Access Token_ avec l
     Je vous recommande donc de choisir ce _scope_ dès le début, mais d'un point de vue de la sécurité, il est préférable de
     choisir le _scope_ le plus bas possible.
 
-A la ligne 20 du fichier `.gitlab-ci.yml`, ci-dessus, les deux variables d'environnement `$DOCKER_HUB_USER` et `$DOCKER_HUB_TOKEN`.
+A la ligne 21 du fichier `.gitlab-ci.yml`, ci-dessus, les deux variables d'environnement `$DOCKER_HUB_USER` et `$DOCKER_HUB_TOKEN`.
 doivent contenir le _user name_ et l'_Access Token_ que vous venez de créer. Définissez ces variables dans votre projet GitLab :
 
 Allez dans
