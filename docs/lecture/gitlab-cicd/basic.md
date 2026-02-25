@@ -81,7 +81,7 @@ CMD ["/usr/local/bin/hello-devops"]
     "registry" DockerHub. Pour des téléchargements anonymes, Dockerhub
     impose une [limite de 10
     téléchargements](https://docs.docker.com/docker-hub/download-rate-limit/#whats-the-download-rate-limit-on-docker-hub)
-    par adresse IP et par heure! Si vous ploquez votre propre adresse
+    par adresse IP et par heure! Si vous bloquez votre propre adresse
     IP, vous ne pourrez plus télécharger d'images Docker depuis
     DockerHub, mais les _dégâts_ ne toucheront que votre propre adresse
     IP. Par contre, si vous bloquez l'adresse IP des serveurs de
@@ -115,7 +115,7 @@ Losque vous êtes authentifié, vous avez droit à 40 téléchargements par heur
 
 !!! Note "Note"
     Les "runners" de l'école utilisent un cache pour les images Docker provenant de DockerHub,
-    mais lorsque nous utilisons Docker à l'itérieur de Docker (DinD), le cache n'est pas utilisé
+    mais lorsque nous utilisons Docker à l'intérieur de Docker, le cache n'est pas utilisé
 
 
 construisez maintenant une image Docker :
