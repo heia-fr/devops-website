@@ -56,7 +56,7 @@ OS: windows (ou linux, ou darwin)
 
 Bravo! Vous avez écrit un programme en Go!
 
-## Containairisation du programme
+## Conteneurisation du programme
 
 Mais si vous n'aviez pas envie (ou si vous ne pouviez pas) installer l'environnement
 de développement Go, vous auriez aussi pu exécuter ce programme en passant par une
