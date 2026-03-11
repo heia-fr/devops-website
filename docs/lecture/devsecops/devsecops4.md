@@ -45,5 +45,8 @@ The OWASP community maintains a [Threat Modeling Process](https://owasp.org/www-
 OWASP provides a [Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) that can be used as a reference for performing threat modeling activities.
 
 ##### Tooling for threat modeling
-On the OWASP website you can also find a [Threat Modeling Tool](https://owasp.org/www-project-threat-dragon/) that can be used to create and manage threat models. 
+On the OWASP website you can also find a [Threat Modeling Tool](https://owasp.org/www-project-threat-dragon/) that can be used to create and manage threat models.
+
+A good introduction to threat modeling can be viewed in the following video: [STRIDE Threat Modeling for Beginners - In 20 minutes](https://www.youtube.com/watch?v=rEnJYNkUde0)
+
 
