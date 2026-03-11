@@ -24,11 +24,16 @@ How could you easily add a SAST check in the testing stage of the existing pipel
 
 Get some inspiration here: <https://docs.gitlab.com/ee/user/application_security/sast/#configure-sast-in-your-cicd-yaml>
 
+!!! Information
+    The GitLab version at HEIA-FR is an ULTIMATE tier, therefore most of the SAST and DAST features are available for you. Currently, there is version 18.8.4 running on the GitLab instance. You can also use the templates provided by GitLab, which are available in the `lib/gitlab/ci/templates/Security` folder of the GitLab repository (https://gitlab.com/gitlab-org/gitlab/-/tree/master/lib/gitlab/ci/templates/Security). For SAST you can use the `SAST.gitlab-ci.yml` template, which is based on `semgrep` for Python projects.
+
 ### DAST
 
-Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: <https://docs.gitlab.com/ee/user/application_security/dast/>. To use the template provided by GitLab, you must include the `DAST.gitlab-ci.yml` template (See <https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Security/DAST.gitlab-ci.yml>)
+Integrate in your pipeline a DAST check. Use for this the OWASP ZAP. Also here you find some inspiration on how to setup: <https://docs.gitlab.com/user/application_security/dast/>. GitLab provides also a template for DAST, which is available in the `lib/gitlab/ci/templates/Security` folder of the GitLab repository (https://gitlab.com/gitlab-org/gitlab/-/tree/master/lib/gitlab/ci/templates/Security). For DAST you can use the `DAST.gitlab-ci.yml` template, which is based on OWASP ZAP.
 
-DAST tests your application will it is running. So, you must ensure that a version of your test application (calculator) runs during your DAST tests. For this, you must use DinD (Docker-in-Docker). On the gitlab inspiration site you find a lot of information about that. Here a snippet, how your pipeline could look like for launching the calculator application:
+{#To use the template provided by GitLab, you must include the `DAST.gitlab-ci.yml` template (See <https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Security/DAST.gitlab-ci.yml>)
+
+To be able to test your application with DAST, your application must be running. You should therefore first build a docker image of the application and launch it in the pipeline (as a service). Then you can connect to it with OWASP ZAP and execute the DAST tests.:
 
 ```bash
 ### build the docker image with the running application (calculator) ####
@@ -82,6 +87,7 @@ dast:
 ```
 
 The connection is done through the `needs` keyword between the running service (calculator) and the DAST test. The running service is described under the `services` section, it will be connected with the aliased name (calculator-app), which is then referenced for the `DAST_WEBSITE` argument.
+#}
 
 > No delivery is expected for this question.
 

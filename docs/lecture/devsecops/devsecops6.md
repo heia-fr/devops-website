@@ -39,7 +39,8 @@ The solution for this is a well-thinked **Identity and Access Management (IAM)**
     - Secret algorithms (intellectual property) must be protected
     - ==**Secrets have no reason to be kept in a VCS!**==
 
-    [Uber data breach, 2016](https://www.theregister.com/2018/02/07/uber_quit_github_for_custom_code_after_2016_data_breach/)
+    [Uber data breach (2017)](https://www.theregister.com/2017/11/22/uber_2016_data_breach/), 
+    [Uber quit Github due to data breach (2018)](https://www.theregister.com/2018/02/07/uber_quit_github_for_custom_code_after_2016_data_breach/)
 
 #### Management of secrets and certificates
 
@@ -57,10 +58,8 @@ High degree of automation also depends strongly on an automated **secrets manage
 
 Usage of automated PKI is highly recommended
 
-![Let's encrypt](img/letsEncrypt.png){width=50%}
+![Let's encrypt](img/letsEncrypt.png){width=35%}
 
 #### Recap - Security dangers in the CI/CD pipeline
 
 ![dangers pipeline](img/Gothuey-Pipeline-sec5.png){width=80%}
-
-
