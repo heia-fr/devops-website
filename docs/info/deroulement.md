@@ -49,7 +49,7 @@ On verra ce qu'on arrive à couvrir sans être trop crevés...
 
 !!! note "Livrables"
    - Intégration initiale de SonarQube dans le projet
-   - Rapport d'analyse de l'application: quelles sont vos recommandations, niveau qualité du code, hygiène (sera évalué par Mme Ingram).
+   - pour la semaine suivante: rapport d'analyse de l'application selon les [consignes](rapport-audit)
    - **En fin de projet**: SonarQube est utilisé pour monitorer la qualité des parties principales du code et la mesure de la couverture des tests.
 
 
