@@ -94,7 +94,7 @@ On verra ce qu'on arrive à couvrir sans être trop crevés...
 ### Jeudi 02.04 à 10h15
 - Revue des propositions DevSecOps /Q&A (M. Mäder)
 
-## P8 : Jeudi 
+## P8 : Mardi & Jeudi 
 ### Mardi 14.04 à 10h15
 - Présentation des approches MLOps par groupe (10 minutes + discussion) (B. Wolf)
 - Presentation simple, objectif principal discussion et partage de connaissances
