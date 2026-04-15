@@ -71,7 +71,7 @@ Par rapport au _workflow_ précédent, il offre les avantages suivants :
 - Il est plus simple à utiliser et à configurer.
 - Il utilise les bonnes pratiques pour la construction et la publication d'images Docker.
 - Il permet de construire et de publier des images multi-architecture facilement.
-- Il est efficace et rapide grâce à l'utilisation de runners ARM et AMD.
+- Il est efficace et rapide car il distribue les tâches de construction sur plusieurs machines avec l'architecture correspondante (ARM ou AMD).
 
 Voici un exemple de _workflow_ qui utilise le _Docker GitHub Builder_ pour construire et publier une image Docker multi-architecture dans le registry de github :
 
