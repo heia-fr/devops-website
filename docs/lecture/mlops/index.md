@@ -28,6 +28,10 @@ At the end of this lecture, you will be evaluated based on the following criteri
   - How can I reproduce a specific model (currently in production or previously trained)?
   - How can I compare experiments and choose the best model?
   - etc.
+- The project needs to implement at the bare minimum the following elements
+  - Automatic pipeline to extract the required data, train a model and deploy it
+  - Versioning of data, code and models involved
+  - Some sort of monitoring (train and deployed model)
 
 ## Additional resources
 
