@@ -74,10 +74,11 @@ On verra ce qu'on arrive à couvrir sans être trop crevés...
     - Quatre à cinq propositions de tests cases **par écrit** à soumettre jusqu'au **6 avril** avec les technologies vues en classe (sinon.js, cypress) pour les tests frontend.
     - Chaque groupe prend contact avec le prof. pour discuter via Teams ou à distance (avant jeudi) de la proposition, en envoyant au préalable le document.
     
-    - Dans la mesure du possible, tenter de spécifier de quels types de tests il s'agit (unitaires, d'intégration, tests end to end) et le type de doublons, quitte à le revisiter, le justifier, et le finaliser pour le rapport final.
-    - Ne pas hésiter à mettre dans le draft de tests cases soumis, tout vos questionnements et doutes liés aux types de test etc.
+    - Pour chaque proposition de test, il faut préciser clairement 1) le but du test (quel comportement est testé), 2) la raison de ce choix (pourquoi ce test est utile, important) 3) la fonction ou le composant testé (en précisant le fichier et les lignes de code concernées pour faciliter le réperage), 4) le type de tests (unitaires, d'intégration, tests end to end), 5) et lorsque le test nécessite un doublon de tests: 6) le type de doublons nécessaire en justifiant votre choix, et 7) la fonction préciser qui sera doublée.
+    
+    - Ne pas hésiter à mettre dans le draft de tests cases soumis, tout vos questionnements et doutes liés aux types, doublons de test etc afin que vous puissiez être aidés.
 
-    - **En fin de projet**: il est possible de lancer des tests, la CI lance des tests, la couverture des tests est mesurée. SonarQube monitore cette couverture.
+    - **En fin de projet**: la documentation des tests est complète (couvre les points 1 à 7 ci-dessous), il est possible de lancer des tests, la CI lance des tests, la couverture des tests est mesurée. SonarQube monitore cette couverture.
 
     <!-- Les Technologies de test: Cypress (pour les tests UI automatisés), qui intègre [Sinon.js](https://docs.cypress.io/api/utilities/sinon) pour les doublons de tests et [Chai](https://docs.cypress.io/guides/references/assertions) pour les "assertions". --!>
 
