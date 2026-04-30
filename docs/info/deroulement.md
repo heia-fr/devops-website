@@ -89,19 +89,20 @@ On verra ce qu'on arrive à couvrir sans être trop crevés...
 !!! note "Livrables MLOps"
     - Petit document avec une proposition d'integration de "Machine learning".
     - Ceci inclus la structure générale/architecture de la partie MLOps du projet.
+    - Rendu 13.4 13:00
 
 ## P7 : Jeudi
 ### Jeudi 02.04 à 10h15
 - Revue des propositions DevSecOps /Q&A (M. Mäder)
 
-## P8 : Jeudi 
+## P8 : Mardi & Jeudi 
+### Mardi 14.04 à 10h15
+- Présentation des approches MLOps par groupe (10 minutes + discussion) (B. Wolf)
+- Presentation simple, objectif principal discussion et partage de connaissances
 ### Jeudi 16.04 à 9h05
 - Revue des propositions CI/CD (J. Supcik)
 
-## P9 : Jeudi 
-### Mardi 21.04 à 10h15
-- Présentation des approches MLOps par groupe (10 minutes + discussion) (B. Wolf)
-- Presentation simple, objectif principal discussion et partage de connaissances
+## P9 : Jeudi
 ### Jeudi 23.04 à 9h05
 - Présentation des tests proposés par chaque groupe (S. Ingram)
 

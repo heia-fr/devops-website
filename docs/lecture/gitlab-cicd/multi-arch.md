@@ -60,7 +60,7 @@ build-multiarch-docker-image:
 
 ```
 
-Faites un _commit_ puis in _push_ et observez le résultat du _pipeline_dans l'interface web de GitHub. Notez que le _runner_
+Faites un _commit_ puis in _push_ et observez le résultat du _pipeline_ dans l'interface web de GitHub. Notez que le _runner_
 prend plus de temps pour construire les images, car maintenant c'est lui qui doit émuler le processeur ARM.
 Après environ 3 minutes le résultat devrait être disponible dans le _registry_ de GitLab.
 
